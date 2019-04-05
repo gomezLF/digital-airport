@@ -11,18 +11,13 @@ import java.util.List;
 
 public class Airport {
 
-    public enum CREATOR {NEW_LIST, RANDOM_NUMBERS}
-
     private static final String AIRPORT_AIRLINE_DATA = "data/AirLine.txt";
     private static final String AIRPORT_CITY_DATA = "data/City.txt";
-    private static final String AIRPORT_DATE_DATA = "data/Date.txt";
-    private static final String AIRPORT_GATE_DATA = "data/Gate.txt";
-    private static final String AIRPORT_TIME_DATA = "data/Time.txt";
 
-    private List<AirLine> airLineList;
+    private List<Flight> flightList;
 
     public Airport(){
-        airLineList = new ArrayList<>();
+        flightList = new ArrayList<Flight>();
     }
 
 
@@ -30,99 +25,43 @@ public class Airport {
         if (i <= 0){
             throw new NegativeNumberException();
         }else {
-            if (!airLineList.isEmpty()){
-                airLineList.clear();
+            if (!flightList.isEmpty()){
+                flightList.clear();
             }
-            int[] flightNumbers = createRandomNumbers(i, CREATOR.NEW_LIST);
-            int[] airlineNumbers = createRandomNumbers(i, CREATOR.RANDOM_NUMBERS);
-            int[] cityNumbers = createRandomNumbers(i,CREATOR.RANDOM_NUMBERS);
-            int[] dateNumbers = createRandomNumbers(i,CREATOR.RANDOM_NUMBERS);
-            int[] gateNumbers = createRandomNumbers(i,CREATOR.RANDOM_NUMBERS);
-            int[] timeNumbers = createRandomNumbers(i,CREATOR.RANDOM_NUMBERS);
+            ArrayList<String> airline = readData(AIRPORT_AIRLINE_DATA);
+            ArrayList<String> city = readData(AIRPORT_CITY_DATA);
 
-            for (int j = 0; j < flightNumbers.length; j++) {
-                String airline = readData(airlineNumbers[j], AIRPORT_AIRLINE_DATA);
-                String city = readData(cityNumbers[j], AIRPORT_CITY_DATA);
-                String date = readData(dateNumbers[j], AIRPORT_DATE_DATA);
-                int gate = Integer.parseInt(readData(gateNumbers[j], AIRPORT_GATE_DATA));
-                String time = readData(timeNumbers[j], AIRPORT_TIME_DATA);
-                String flightNumber = "";
-
-                switch (airline){
-                    case "Avianca":
-                        flightNumber = "AVA " + flightNumbers[j];
-                        break;
-                    case "Satena":
-                        flightNumber = "NSE " + flightNumbers[j];
-                        break;
-                    case "Latam":
-                        flightNumber = "ARE " + flightNumbers[j];
-                        break;
-                    case "Copa Airlines":
-                        flightNumber = "CMP " + flightNumbers[j];
-                        break;
-                    case "Wingo":
-                        flightNumber = "RPB " + flightNumbers[j];
-                        break;
-                    case "EasyFly":
-                        flightNumber = "EFY " + flightNumbers[j];
-                        break;
-                    case "Viva Colombia":
-                        flightNumber = "VVC " + flightNumbers[j];
-                        break;
-                    case "Lanco":
-                        flightNumber = "LAE " + flightNumbers[j];
-                        break;
-                    case "Tampa Cargo":
-                        flightNumber = "TPA " + flightNumbers[j];
-                        break;
-                    case "Sadelca":
-                        flightNumber = "SDK " + flightNumbers[j];
-                        break;
-                }
-                AirLine a = new AirLine(airline);
-                a.addFlight(date, time, flightNumber, city, gate);
-                airLineList.add(a);
+            for (int j = 0; j < i; j++) {
+                int airlineN = 0;
+                airlineN = (int) Math.random()*30;
+                System.out.println(j + ": " + airlineN);
             }
+
         }
     }
 
-    private String readData(int i, String path)throws IOException {
+    private ArrayList<String> readData(String path)throws IOException {
         File file = new File(path);
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
 
-        int counter = 0;
-        boolean stoped = false;
+        ArrayList<String> words = new ArrayList<String>();
+
         String line = br.readLine();
-        while(line != null && !stoped){
+        while(line != null){
             if (line.charAt(0) != '#'){
-                if (counter == i){
-                    stoped = true;
-                }
+                words.add(line);
             }
-            counter ++;
             line = br.readLine();
         }
-        return line;
+        return words;
     }
 
-    private int[] createRandomNumbers(int i, CREATOR creator ){
-        int min = 0;
-        int max = 0;
+    private int[] createRandomNumbers(int i){
+        int min = 1000;
+        int max = 9999;
+
         int[] randomNumbers = new int[i];
-
-        switch (creator){
-            case NEW_LIST:
-                min = 1000;
-                max = 9999;
-
-                break;
-            case RANDOM_NUMBERS:
-                min = 1;
-                max = 1000;
-                break;
-        }
 
         for (int j = 0; j < randomNumbers.length; j++) {
             int rd = (int)Math.floor(Math.random()*(min-(max+1))+(max));
