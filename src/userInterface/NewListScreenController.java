@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class NewListScreenController {
 
+    private AirportScreenController asc;
     private Stage stage;
     private Airport airport;
 
@@ -36,6 +37,14 @@ public class NewListScreenController {
         this.airport = airport;
     }
 
+    public AirportScreenController getAsc() {
+        return asc;
+    }
+
+    public void setAsc(AirportScreenController asc) {
+        this.asc = asc;
+    }
+
     @FXML
     void createClicked(ActionEvent event) {
         int size = 0;
@@ -43,6 +52,10 @@ public class NewListScreenController {
         try{
             size = Integer.parseInt(newListSize.getText());
             airport.createData(size);
+
+            asc.setAirport(this.airport);
+            asc.addInformation();
+
             stage.close();
         }catch (NumberFormatException e){
             Alert a = new Alert(Alert.AlertType.ERROR, "Caused by: \n" + "The field to create a new list is empty or an invalid character has been entered.", ButtonType.CLOSE);

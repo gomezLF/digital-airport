@@ -1,5 +1,7 @@
 package userInterface;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Airport;
 import model.Flight;
@@ -25,28 +28,28 @@ public class AirportScreenController {
     private TableView<Flight> dataTable;
 
     @FXML
-    private TableColumn<?, ?> dateColumn;
+    private TableColumn<Flight, String> dateColumn;
 
     @FXML
-    private TableColumn<?, ?> timeColumn;
+    private TableColumn<Flight, String> timeColumn;
 
     @FXML
-    private TableColumn<?, ?> airlineColumn;
+    private TableColumn<Flight, String> airlineColumn;
 
     @FXML
-    private TableColumn<?, ?> flightColumn;
+    private TableColumn<Flight, String> flightColumn;
 
     @FXML
-    private TableColumn<?, ?> destinationColumn;
+    private TableColumn<Flight, String> destinationColumn;
 
     @FXML
-    private TableColumn<?, ?> gateColumn;
+    private TableColumn<Flight, String> gateColumn;
 
     @FXML
     private TextField seeker;
 
     @FXML
-    private ComboBox<?> criteriaBox;
+    private ComboBox<String> criteriaBox;
 
     @FXML
     private Label timeLabel;
@@ -55,6 +58,15 @@ public class AirportScreenController {
     @FXML
     void initialize() {
         airport = new Airport();
+
+        criteriaBox.getItems().addAll("Search by Airline", "Search by Date", "Search by Destination city", "Search by Flight Number", "Search by Gate", "Search by Time");
+
+        dateColumn.setCellValueFactory(new PropertyValueFactory<Flight, String>("date"));
+        timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
+        airlineColumn.setCellValueFactory(new PropertyValueFactory<>("airline"));
+        flightColumn.setCellValueFactory(new PropertyValueFactory<>("flightNumber"));
+        destinationColumn.setCellValueFactory(new PropertyValueFactory<>("destinationCity"));
+        gateColumn.setCellValueFactory(new PropertyValueFactory<>("gate"));
     }
 
     public Airport getAirport() {
@@ -93,6 +105,7 @@ public class AirportScreenController {
         NewListScreenController ns= loader.getController();
         ns.setAirport(this.airport);
         ns.setStage(stage);
+        ns.setAsc(this);
     }
 
     @FXML
@@ -137,6 +150,13 @@ public class AirportScreenController {
 
     @FXML
     void sortByTime(ActionEvent event) {
+
+    }
+
+    public void addInformation(){
+
+        ObservableList<Flight> data = FXCollections.observableList(airport.getFlightList());
+        dataTable.setItems(data);
 
     }
 

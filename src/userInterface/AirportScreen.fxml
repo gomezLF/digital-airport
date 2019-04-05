@@ -76,9 +76,9 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <ComboBox fx:id="criteriaBox" layoutX="212.0" layoutY="28.0" prefWidth="150.0" />
+                  <ComboBox fx:id="criteriaBox" layoutX="212.0" layoutY="28.0" prefHeight="25.0" prefWidth="170.0" promptText="Cirteria" />
                   <Separator layoutX="447.0" orientation="VERTICAL" prefHeight="95.0" />
-                  <Label fx:id="timeLabel" alignment="CENTER" layoutX="598.0" layoutY="19.0" text="3:50:20" textAlignment="CENTER">
+                  <Label fx:id="timeLabel" alignment="CENTER" layoutX="598.0" layoutY="19.0" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="40.0" />
                      </font>

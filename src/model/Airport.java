@@ -23,6 +23,9 @@ public class Airport {
         flightList = new ArrayList<Flight>();
     }
 
+    public List<Flight> getFlightList(){
+        return flightList;
+    }
 
     public void createData(int i) throws IOException, NegativeNumberException {
         if (i <= 0){
@@ -46,10 +49,6 @@ public class Airport {
                 int flightN = flightNumbers[j];
 
                 addFlight(airline.get(airlineN), city.get(cityN), day, month, hour, minute, gate, flightN);
-            }
-
-            for (int j = 0; j < flightList.size(); j++) {
-                System.out.println("Airline: " + flightList.get(j).getAirline() + "\n" + "FlightNumber: " + flightList.get(j).getFlightNumber() + "\n" + "Date: " + flightList.get(j).getDate() + "\n" + "Time: " + flightList.get(j).getTime() + "\n" + "TO: " + flightList.get(j).getDestinationCity() + "\n" + "Gate: " + flightList.get(j).getGate() + "\n" + "\n");
             }
         }
     }
@@ -106,7 +105,7 @@ public class Airport {
                 flightNumber = "SEA " + flightN;
                 break;
         }
-        Flight flight = new Flight(date, time, airlineN, flightNumber, cityN, gate);
+        Flight flight = new Flight(date, time, airlineN, flightNumber, cityN, "" + gate);
         flightList.add(flight);
     }
 
