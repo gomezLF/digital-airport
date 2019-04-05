@@ -31,17 +31,89 @@ public class Airport {
             if (!flightList.isEmpty()){
                 flightList.clear();
             }
+            int[] flightNumbers = createRandomNumbers(i);
             ArrayList<String> airline = readData(AIRPORT_AIRLINE_DATA);
             ArrayList<String> city = readData(AIRPORT_CITY_DATA);
 
             for (int j = 0; j < i; j++) {
                 int airlineN = (int) Math.floor(Math.random()*AIRLINE_DATA_SIZE);
                 int cityN = (int) Math.floor(Math.random()*CITY_DATA_SIZE);
+                int day = (int) Math.floor(Math.random()*(1-(30+1))+(30));
+                int month = (int) Math.floor(Math.random()*(5-(12+1))+(12));
+                int hour = (int) Math.floor(Math.random()*(1-(12+1))+(12));
+                int minute = (int) Math.floor(Math.random()*(0-(59+1))+(59));
+                int gate = (int) Math.floor(Math.random()*(1-(15+1))+(15));
+                int flightN = flightNumbers[j];
 
-                
+                addFlight(airline.get(airlineN), city.get(cityN), day, month, hour, minute, gate, flightN);
             }
 
+            for (int j = 0; j < flightList.size(); j++) {
+                System.out.println("Airline: " + flightList.get(j).getAirline() + "\n" + "FlightNumber: " + flightList.get(j).getFlightNumber() + "\n" + "Date: " + flightList.get(j).getDate() + "\n" + "Time: " + flightList.get(j).getTime() + "\\n");
+            }
         }
+    }
+
+    private void addFlight(String airlineN, String cityN, int day, int month, int hour, int minute, int gate, int flightN){
+        String flightNumber = "";
+        String date = "";
+        String time = "";
+
+        if (minute < 10){
+            time = "" + hour + ":0" + minute;
+        }else {
+            time = "" + hour + ":" + minute;
+        }
+
+        if (month < 10 || day < 10){
+            String dayN = "";
+            String monthN = "";
+            if (day < 10){
+                dayN = "0" + day;
+            }
+            if (month < 10){
+                monthN = "0" + month;
+            }
+            date = "2019/" + dayN + monthN;
+
+        }else {
+
+        }
+
+        switch (airlineN){
+            case "Avianca":
+                flightNumber = "AVA " + flightN;
+                break;
+            case "Satena":
+                flightNumber = "SA " + flightN;
+                break;
+            case "Latam":
+                flightNumber = "LTM " + flightN;
+                break;
+            case "Copa Airlines":
+                flightNumber = "CAL " + flightN;
+                break;
+            case "Wingo":
+                flightNumber = "WNO " + flightN;
+                break;
+            case "EasyFly":
+                flightNumber = "ESF " + flightN;
+                break;
+            case "Viva Colombia":
+                flightNumber = "VVA " + flightN;
+                break;
+            case "Lanco":
+                flightNumber = "LNO " + flightN;
+                break;
+            case "Tampa Cargo":
+                flightNumber = "TMC " + flightN;
+                break;
+            case "Sadelca":
+                flightNumber = "SEA " + flightN;
+                break;
+        }
+        Flight flight = new Flight(date, time, airlineN, flightNumber, cityN, gate);
+        flightList.add(flight);
     }
 
     private ArrayList<String> readData(String path)throws IOException {
