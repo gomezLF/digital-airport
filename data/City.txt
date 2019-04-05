@@ -1,0 +1,1001 @@
+﻿#City
+Puerto Príncipe
+Puerto Príncipe
+Mexico D.C
+Tegucigalpa
+Pasto
+Madrid
+Quito
+Sucre
+Lima
+Mexico D.C
+Ibague
+Madrid
+Brasilia
+París
+Quito
+Asunción
+Pasto
+Cali
+Brasilia
+Santiago de Chile
+Tegucigalpa
+Puerto Príncipe
+Santa Marta
+Madrid
+Santa Marta
+Mexico D.C
+Sucre
+Roma
+Asunción
+Mexico D.C
+Ibague
+Santiago de Chile
+Caracas
+Buenos Aires
+Moscú
+Cartagena
+Río de Janeiro
+Santa Marta
+Caracas
+Barranquilla
+Ibague
+Nasáu
+Asunción
+Río de Janeiro
+Madrid
+Asunción
+Nasáu
+Buenos Aires
+París
+San Salvador
+Roma
+Cartagena
+Pasto
+Montevideo
+Santiago de Chile
+Mexico D.C
+Lima
+Santa Marta
+Cali
+Lima
+Bogotá
+Santa Marta
+Caracas
+Tegucigalpa
+Brasilia
+San Salvador
+Mexico D.C
+Sucre
+Buenos Aires
+Moscú
+Mexico D.C
+París
+Buenos Aires
+Caracas
+Santiago de Chile
+Río de Janeiro
+Ibague
+París
+Cartagena
+Moscú
+Mexico D.C
+Puerto Príncipe
+Pasto
+Caracas
+Medellín
+Caracas
+Mexico D.C
+Montevideo
+Cartagena
+Cali
+Caracas
+Cali
+Mexico D.C
+Mexico D.C
+Caracas
+Montevideo
+Cartagena
+Ibague
+Bogotá
+Medellín
+San Salvador
+Lima
+Moscú
+Santiago de Chile
+Montevideo
+Caracas
+Lima
+Buenos Aires
+Santa Marta
+Mexico D.C
+San Salvador
+Nasáu
+Buenos Aires
+París
+Ibague
+Tegucigalpa
+Roma
+París
+Roma
+Lima
+Ibague
+Río de Janeiro
+Sucre
+Ibague
+Londres
+París
+Londres
+Sucre
+Brasilia
+Nasáu
+Santa Marta
+Santa Marta
+Santa Marta
+Ibague
+Nasáu
+Cali
+Puerto Príncipe
+San Salvador
+Buenos Aires
+Madrid
+Santa Marta
+Medellín
+Londres
+Santa Marta
+Brasilia
+Puerto Príncipe
+Santiago de Chile
+Caracas
+Asunción
+Cartagena
+Lima
+Río de Janeiro
+Barranquilla
+Santiago de Chile
+Cali
+Caracas
+Pasto
+Medellín
+Ibague
+Río de Janeiro
+Tegucigalpa
+Roma
+Sucre
+Lima
+Montevideo
+Caracas
+San Salvador
+Cali
+Sucre
+Bogotá
+Tegucigalpa
+Nasáu
+Madrid
+Río de Janeiro
+París
+Santiago de Chile
+Barranquilla
+Santa Marta
+Quito
+Cali
+Brasilia
+Santiago de Chile
+Medellín
+Santa Marta
+Quito
+Puerto Príncipe
+Santa Marta
+Pasto
+Moscú
+Nasáu
+Cali
+Madrid
+Asunción
+Quito
+Ibague
+Santa Marta
+París
+Puerto Príncipe
+Mexico D.C
+Santa Marta
+Lima
+Barranquilla
+Barranquilla
+Cartagena
+Montevideo
+Puerto Príncipe
+Santa Marta
+Bogotá
+Moscú
+Buenos Aires
+Mexico D.C
+Madrid
+Caracas
+Cartagena
+Santiago de Chile
+Santa Marta
+Quito
+Barranquilla
+Bogotá
+Montevideo
+París
+Moscú
+Tegucigalpa
+Cali
+Roma
+Cartagena
+Madrid
+Montevideo
+Tegucigalpa
+Santa Marta
+Roma
+Santiago de Chile
+San Salvador
+Puerto Príncipe
+Bogotá
+Lima
+Londres
+Barranquilla
+San Salvador
+Ibague
+San Salvador
+Londres
+Tegucigalpa
+Bogotá
+Montevideo
+San Salvador
+Santiago de Chile
+Buenos Aires
+Cali
+Brasilia
+Santa Marta
+Medellín
+Nasáu
+Lima
+Pasto
+París
+Madrid
+San Salvador
+Madrid
+Sucre
+Nasáu
+Río de Janeiro
+Cali
+Ibague
+París
+Santa Marta
+Brasilia
+Pasto
+Puerto Príncipe
+Pasto
+Sucre
+Brasilia
+Barranquilla
+París
+Puerto Príncipe
+Santiago de Chile
+Montevideo
+Brasilia
+Bogotá
+Asunción
+Pasto
+Mexico D.C
+Medellín
+Buenos Aires
+Moscú
+Cartagena
+Asunción
+Sucre
+Moscú
+Santa Marta
+Caracas
+Ibague
+Santa Marta
+Nasáu
+Santa Marta
+Mexico D.C
+Londres
+Cartagena
+Madrid
+Brasilia
+Barranquilla
+Medellín
+Sucre
+París
+Brasilia
+Santiago de Chile
+Pasto
+Ibague
+Lima
+Santa Marta
+Caracas
+Buenos Aires
+Santiago de Chile
+Brasilia
+San Salvador
+Madrid
+Mexico D.C
+Madrid
+Bogotá
+Asunción
+Nasáu
+Pasto
+Roma
+Sucre
+Quito
+Brasilia
+París
+Ibague
+París
+Ibague
+San Salvador
+Puerto Príncipe
+Quito
+París
+Río de Janeiro
+Ibague
+Medellín
+Nasáu
+Asunción
+Río de Janeiro
+Barranquilla
+Buenos Aires
+San Salvador
+Cartagena
+Sucre
+Santiago de Chile
+Medellín
+Santa Marta
+Cartagena
+Ibague
+Santiago de Chile
+Sucre
+Mexico D.C
+Nasáu
+San Salvador
+Mexico D.C
+Río de Janeiro
+Barranquilla
+Nasáu
+Mexico D.C
+París
+Santiago de Chile
+Puerto Príncipe
+Santa Marta
+Medellín
+Caracas
+Lima
+Roma
+Lima
+Nasáu
+San Salvador
+Cartagena
+Montevideo
+Sucre
+Lima
+Pasto
+Cali
+Santiago de Chile
+Caracas
+San Salvador
+Bogotá
+Pasto
+París
+Quito
+Londres
+Sucre
+Montevideo
+Río de Janeiro
+Cartagena
+Brasilia
+Cali
+Medellín
+París
+Santa Marta
+Quito
+Cartagena
+Bogotá
+Cali
+Tegucigalpa
+Londres
+Tegucigalpa
+Mexico D.C
+Madrid
+Brasilia
+Brasilia
+Tegucigalpa
+Ibague
+París
+Lima
+Medellín
+Buenos Aires
+Nasáu
+Mexico D.C
+Barranquilla
+Brasilia
+Brasilia
+Caracas
+Moscú
+Madrid
+Sucre
+Santa Marta
+Santa Marta
+Río de Janeiro
+Bogotá
+Río de Janeiro
+París
+Cali
+Ibague
+Bogotá
+Pasto
+Cartagena
+Medellín
+Mexico D.C
+Nasáu
+Río de Janeiro
+Tegucigalpa
+Moscú
+Roma
+Santa Marta
+Medellín
+Medellín
+Medellín
+Bogotá
+Medellín
+Santa Marta
+Madrid
+San Salvador
+Lima
+San Salvador
+Brasilia
+Nasáu
+Brasilia
+Caracas
+Río de Janeiro
+Pasto
+Quito
+Puerto Príncipe
+Brasilia
+Barranquilla
+Mexico D.C
+Ibague
+Madrid
+Bogotá
+Buenos Aires
+Bogotá
+Lima
+Pasto
+Quito
+Bogotá
+Santa Marta
+San Salvador
+Lima
+Quito
+Cartagena
+Asunción
+Cartagena
+Tegucigalpa
+Santiago de Chile
+Montevideo
+Montevideo
+Nasáu
+Puerto Príncipe
+Asunción
+Moscú
+Moscú
+Santa Marta
+Roma
+Mexico D.C
+Quito
+San Salvador
+Londres
+Moscú
+Bogotá
+Tegucigalpa
+Madrid
+Montevideo
+Santa Marta
+Pasto
+Madrid
+Lima
+Río de Janeiro
+Medellín
+Londres
+Londres
+Ibague
+Brasilia
+Santiago de Chile
+Río de Janeiro
+Moscú
+Moscú
+Montevideo
+San Salvador
+Roma
+Santiago de Chile
+Madrid
+Barranquilla
+Londres
+Sucre
+Moscú
+Barranquilla
+San Salvador
+Lima
+Río de Janeiro
+Brasilia
+Nasáu
+París
+San Salvador
+Roma
+Pasto
+Santa Marta
+Madrid
+Puerto Príncipe
+Quito
+Montevideo
+Mexico D.C
+Quito
+Caracas
+Bogotá
+Santiago de Chile
+Buenos Aires
+San Salvador
+Barranquilla
+Nasáu
+Lima
+Caracas
+Barranquilla
+Lima
+Buenos Aires
+Montevideo
+Bogotá
+Caracas
+Moscú
+Medellín
+Bogotá
+Santa Marta
+Sucre
+Caracas
+Moscú
+Cartagena
+Buenos Aires
+Montevideo
+Barranquilla
+Bogotá
+Moscú
+Madrid
+San Salvador
+Santiago de Chile
+Cartagena
+Moscú
+Pasto
+Pasto
+Buenos Aires
+Lima
+Lima
+Bogotá
+Buenos Aires
+Moscú
+San Salvador
+Caracas
+San Salvador
+Madrid
+Lima
+Montevideo
+Buenos Aires
+París
+Roma
+Sucre
+Quito
+Moscú
+Moscú
+Cartagena
+París
+Cartagena
+Barranquilla
+Santa Marta
+Nasáu
+Puerto Príncipe
+Medellín
+Nasáu
+Puerto Príncipe
+Asunción
+Buenos Aires
+Caracas
+Roma
+Buenos Aires
+Puerto Príncipe
+Londres
+Caracas
+Tegucigalpa
+Pasto
+Lima
+Caracas
+Cali
+Asunción
+Nasáu
+Santiago de Chile
+Londres
+Brasilia
+Cartagena
+Buenos Aires
+Cali
+Cartagena
+Barranquilla
+Madrid
+Sucre
+Pasto
+Santiago de Chile
+París
+Barranquilla
+París
+Río de Janeiro
+San Salvador
+Asunción
+San Salvador
+Bogotá
+Brasilia
+Río de Janeiro
+Nasáu
+Puerto Príncipe
+Santa Marta
+Ibague
+Quito
+Asunción
+Cartagena
+Bogotá
+Santa Marta
+Mexico D.C
+Puerto Príncipe
+Ibague
+Asunción
+Bogotá
+Buenos Aires
+Ibague
+Tegucigalpa
+Bogotá
+Tegucigalpa
+Pasto
+Nasáu
+París
+Caracas
+Mexico D.C
+Bogotá
+Tegucigalpa
+Bogotá
+Montevideo
+Buenos Aires
+Roma
+Buenos Aires
+Quito
+París
+Medellín
+Caracas
+Ibague
+Medellín
+Madrid
+Santa Marta
+Roma
+Roma
+Brasilia
+Sucre
+Asunción
+Pasto
+San Salvador
+Asunción
+París
+Roma
+Moscú
+Bogotá
+Asunción
+Tegucigalpa
+Río de Janeiro
+Cali
+San Salvador
+Medellín
+Bogotá
+Madrid
+Mexico D.C
+Moscú
+Caracas
+Puerto Príncipe
+Madrid
+Londres
+Medellín
+Medellín
+Barranquilla
+Roma
+Madrid
+Lima
+Cali
+París
+Madrid
+Mexico D.C
+Brasilia
+Ibague
+Caracas
+Mexico D.C
+Pasto
+París
+Nasáu
+Madrid
+Mexico D.C
+Montevideo
+Brasilia
+Quito
+Londres
+París
+Cali
+Buenos Aires
+Cali
+Puerto Príncipe
+San Salvador
+Medellín
+Tegucigalpa
+Tegucigalpa
+Brasilia
+Mexico D.C
+Asunción
+San Salvador
+Barranquilla
+Brasilia
+Lima
+Barranquilla
+Santa Marta
+Tegucigalpa
+Santa Marta
+Medellín
+Sucre
+Montevideo
+Moscú
+París
+Moscú
+Cartagena
+Bogotá
+Barranquilla
+Cartagena
+Montevideo
+Puerto Príncipe
+Asunción
+Brasilia
+Ibague
+Cartagena
+Caracas
+Moscú
+París
+Santa Marta
+Montevideo
+Madrid
+Pasto
+Montevideo
+Cartagena
+Nasáu
+Barranquilla
+Pasto
+Buenos Aires
+Caracas
+Santa Marta
+Madrid
+Sucre
+Lima
+Montevideo
+Pasto
+Moscú
+Madrid
+San Salvador
+París
+Cali
+Nasáu
+Sucre
+Quito
+Medellín
+Roma
+Buenos Aires
+San Salvador
+San Salvador
+Ibague
+Río de Janeiro
+Caracas
+Mexico D.C
+Brasilia
+Caracas
+Quito
+París
+Río de Janeiro
+Cartagena
+Londres
+Montevideo
+Cartagena
+Santa Marta
+Brasilia
+Montevideo
+Buenos Aires
+Medellín
+Roma
+Quito
+Cali
+Puerto Príncipe
+Cartagena
+Ibague
+Roma
+Bogotá
+San Salvador
+Cali
+Roma
+Lima
+Medellín
+Caracas
+Nasáu
+Nasáu
+Río de Janeiro
+Buenos Aires
+San Salvador
+Cartagena
+Caracas
+Quito
+Santiago de Chile
+Quito
+Pasto
+Sucre
+Ibague
+Roma
+Mexico D.C
+París
+Río de Janeiro
+Medellín
+Puerto Príncipe
+Caracas
+Sucre
+Montevideo
+Buenos Aires
+Londres
+Medellín
+Tegucigalpa
+Tegucigalpa
+Medellín
+Puerto Príncipe
+Puerto Príncipe
+Brasilia
+Montevideo
+Quito
+Madrid
+París
+Medellín
+Madrid
+Río de Janeiro
+Puerto Príncipe
+Moscú
+Lima
+Cali
+Caracas
+Montevideo
+Ibague
+Tegucigalpa
+París
+Barranquilla
+Caracas
+Sucre
+Madrid
+Caracas
+San Salvador
+Tegucigalpa
+Barranquilla
+Barranquilla
+Quito
+Cali
+Quito
+Buenos Aires
+Ibague
+Pasto
+Lima
+Pasto
+Santiago de Chile
+Buenos Aires
+Cali
+Pasto
+Caracas
+Quito
+Sucre
+Medellín
+Lima
+Buenos Aires
+Asunción
+Roma
+Puerto Príncipe
+Madrid
+Nasáu
+París
+Medellín
+Montevideo
+Santa Marta
+Santa Marta
+Puerto Príncipe
+Madrid
+París
+Sucre
+Brasilia
+Caracas
+Mexico D.C
+Medellín
+Sucre
+Quito
+Nasáu
+Bogotá
+Asunción
+Cartagena
+París
+Tegucigalpa
+Caracas
+Río de Janeiro
+Santa Marta
+Nasáu
+Lima
+Santiago de Chile
+Moscú
+San Salvador
+Sucre
+Tegucigalpa
+Londres
+Río de Janeiro
+San Salvador
+Bogotá
+Moscú
+Asunción
+Moscú
+Río de Janeiro
+Pasto
+Sucre
+Cali
+Madrid
+Puerto Príncipe
+Brasilia
+Tegucigalpa
+Cartagena
+Moscú
+Mexico D.C
+Santiago de Chile
+Santiago de Chile
+Bogotá
+Sucre
+Bogotá
+París
+Mexico D.C
+Montevideo
+Puerto Príncipe
+Roma
+Londres
+Montevideo
+Caracas
+Mexico D.C
+Asunción
+Sucre
+Medellín
+Bogotá
+Tegucigalpa
+Mexico D.C
+Brasilia
+Quito
+París
+París
+Caracas
+Pasto
+Nasáu
+Barranquilla
+Brasilia
+Cali
+Pasto
+Montevideo
+Nasáu
+Medellín
+Nasáu
+Barranquilla
+Londres
+Medellín
+Buenos Aires
+Lima
+Bogotá
+Mexico D.C
+Montevideo
+Montevideo
+Cali
+Roma
