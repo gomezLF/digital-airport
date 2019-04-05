@@ -11,6 +11,9 @@ import java.util.List;
 
 public class Airport {
 
+    private static final int AIRLINE_DATA_SIZE = 10;
+    private static final int CITY_DATA_SIZE = 30;
+
     private static final String AIRPORT_AIRLINE_DATA = "data/AirLine.txt";
     private static final String AIRPORT_CITY_DATA = "data/City.txt";
 
@@ -32,9 +35,10 @@ public class Airport {
             ArrayList<String> city = readData(AIRPORT_CITY_DATA);
 
             for (int j = 0; j < i; j++) {
-                int airlineN = 0;
-                airlineN = (int) Math.random()*30;
-                System.out.println(j + ": " + airlineN);
+                int airlineN = (int) Math.floor(Math.random()*AIRLINE_DATA_SIZE);
+                int cityN = (int) Math.floor(Math.random()*CITY_DATA_SIZE);
+
+                
             }
 
         }
