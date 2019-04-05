@@ -38,47 +38,41 @@ public class Airport {
             for (int j = 0; j < i; j++) {
                 int airlineN = (int) Math.floor(Math.random()*AIRLINE_DATA_SIZE);
                 int cityN = (int) Math.floor(Math.random()*CITY_DATA_SIZE);
-                int day = (int) Math.floor(Math.random()*(1-(30+1))+(30));
-                int month = (int) Math.floor(Math.random()*(5-(12+1))+(12));
-                int hour = (int) Math.floor(Math.random()*(1-(12+1))+(12));
-                int minute = (int) Math.floor(Math.random()*(0-(59+1))+(59));
-                int gate = (int) Math.floor(Math.random()*(1-(15+1))+(15));
+                String day = "" +  (int) Math.floor(Math.random()*(1-(30+1))+(30));
+                String month = "" + (int) Math.floor(Math.random()*(5-(12+1))+(12));
+                String hour = "" + (int) Math.floor(Math.random()*(2-(12+1))+(12));
+                String minute = "" + (int) Math.floor(Math.random()*(0-(59+1))+(59));
+                int gate = (int) Math.floor(Math.random()*(2-(15+1))+(15));
                 int flightN = flightNumbers[j];
 
                 addFlight(airline.get(airlineN), city.get(cityN), day, month, hour, minute, gate, flightN);
             }
 
             for (int j = 0; j < flightList.size(); j++) {
-                System.out.println("Airline: " + flightList.get(j).getAirline() + "\n" + "FlightNumber: " + flightList.get(j).getFlightNumber() + "\n" + "Date: " + flightList.get(j).getDate() + "\n" + "Time: " + flightList.get(j).getTime() + "\\n");
+                System.out.println("Airline: " + flightList.get(j).getAirline() + "\n" + "FlightNumber: " + flightList.get(j).getFlightNumber() + "\n" + "Date: " + flightList.get(j).getDate() + "\n" + "Time: " + flightList.get(j).getTime() + "\n" + "TO: " + flightList.get(j).getDestinationCity() + "\n" + "Gate: " + flightList.get(j).getGate() + "\n" + "\n");
             }
         }
     }
 
-    private void addFlight(String airlineN, String cityN, int day, int month, int hour, int minute, int gate, int flightN){
+    private void addFlight(String airlineN, String cityN, String day, String month, String hour, String minute, int gate, int flightN){
         String flightNumber = "";
         String date = "";
         String time = "";
 
-        if (minute < 10){
-            time = "" + hour + ":0" + minute;
-        }else {
-            time = "" + hour + ":" + minute;
+        if (Integer.parseInt(day) < 10){
+            day = "0" + day;
         }
-
-        if (month < 10 || day < 10){
-            String dayN = "";
-            String monthN = "";
-            if (day < 10){
-                dayN = "0" + day;
-            }
-            if (month < 10){
-                monthN = "0" + month;
-            }
-            date = "2019/" + dayN + monthN;
-
-        }else {
-
+        if (Integer.parseInt(month) < 10){
+            month = "0" + month;
         }
+        if (Integer.parseInt(hour) < 10){
+            hour = "0" + hour;
+        }
+        if (Integer.parseInt(minute) < 10){
+            minute = "0" + minute;
+        }
+        time = hour + ":" + minute;
+        date = "2019/" + month + "/" + day;
 
         switch (airlineN){
             case "Avianca":
@@ -125,9 +119,7 @@ public class Airport {
 
         String line = br.readLine();
         while(line != null){
-            if (line.charAt(0) != '#'){
-                words.add(line);
-            }
+            words.add(line);
             line = br.readLine();
         }
         return words;
