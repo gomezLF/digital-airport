@@ -120,12 +120,14 @@ public class AirportScreenController {
 
     @FXML
     void sortByCity(ActionEvent event) {
-
+        airport.sortByDestination();
+        addInformation();
     }
 
     @FXML
     void sortByFlight(ActionEvent event) {
-
+        airport.sortByFlightNumber();
+        addInformation();
     }
 
     @FXML

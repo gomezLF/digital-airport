@@ -1,12 +1,12 @@
 package model;
 
-import customExceptions.NegativeNumberException;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Airport {
@@ -27,9 +27,9 @@ public class Airport {
         return flightList;
     }
 
-    public void createData(int i) throws IOException, NegativeNumberException {
+    public void createData(int i) throws IOException, NegativeArraySizeException {
         if (i <= 0){
-            throw new NegativeNumberException();
+            throw new NegativeArraySizeException();
         }else {
             if (!flightList.isEmpty()){
                 flightList.clear();
@@ -159,6 +159,15 @@ public class Airport {
             flightList.set(i, min);
             flightList.set(c, aux);
         }
+    }
+
+
+    public void sortByFlightNumber(){
+        Collections.sort(flightList);
+    }
+
+    public void sortByDestination(){
+        Collections.sort(flightList, new CityDestinationComparator());
     }
 
 }

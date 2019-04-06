@@ -1,6 +1,5 @@
 package userInterface;
 
-import customExceptions.NegativeNumberException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -53,12 +52,10 @@ public class NewListScreenController {
             asc.addInformation();
 
             stage.close();
-        }catch (NumberFormatException e){
+        }catch (NumberFormatException  | NegativeArraySizeException e){
             Alert a = new Alert(Alert.AlertType.ERROR, "Caused by: \n" + "The field to create a new list is empty or an invalid character has been entered.", ButtonType.CLOSE);
             a.setHeaderText("Please, to create a new list, enter a valid number");
             a.show();
-        }catch (NegativeNumberException e){
-            e.message();
         }catch (IOException e){
             Alert a = new Alert(Alert.AlertType.ERROR, "Caused by: \n" + "The files where the data is, has been deleted or moved to another destination");
             a.setHeaderText("Files not found");
