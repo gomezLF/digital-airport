@@ -6,13 +6,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.Airport;
 import model.Flight;
@@ -78,23 +76,14 @@ public class AirportScreenController {
     }
 
     @FXML
-    void aboutClicked(ActionEvent event) {
-
-    }
-
-    @FXML
     void closeClicked(ActionEvent event) {
         System.exit(0);
     }
 
     @FXML
-    void instructionsClicked(ActionEvent event) {
-
-    }
-
-    @FXML
     void newListClicked(ActionEvent event) throws IOException {
         Stage stage = new Stage();
+        stage.setResizable(false);
         FXMLLoader loader= new FXMLLoader(getClass().getResource("NewListScreen.fxml"));
         Parent root = loader.load();
 
@@ -125,7 +114,8 @@ public class AirportScreenController {
 
     @FXML
     void sortByAirline(ActionEvent event) {
-
+        airport.sortByAirline();
+        addInformation();
     }
 
     @FXML
@@ -144,20 +134,25 @@ public class AirportScreenController {
     }
 
     @FXML
-    void sortBySchedule(ActionEvent event) {
-
+    void sortByDate(ActionEvent event) {
+        airport.sortByDate();
+        addInformation();
     }
 
     @FXML
     void sortByTime(ActionEvent event) {
-
+        airport.sortByTime();
+        addInformation();
     }
 
     public void addInformation(){
-
         ObservableList<Flight> data = FXCollections.observableList(airport.getFlightList());
         dataTable.setItems(data);
-
     }
+
+
+
+
+
 
 }

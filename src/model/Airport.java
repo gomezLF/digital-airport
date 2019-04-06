@@ -41,15 +41,16 @@ public class Airport {
             for (int j = 0; j < i; j++) {
                 int airlineN = (int) Math.floor(Math.random()*AIRLINE_DATA_SIZE);
                 int cityN = (int) Math.floor(Math.random()*CITY_DATA_SIZE);
-                String day = "" +  (int) Math.floor(Math.random()*(1-(30+1))+(30));
+                String day = "" +  (int) Math.floor(Math.random()*(2-(30+1))+(30));
                 String month = "" + (int) Math.floor(Math.random()*(5-(12+1))+(12));
                 String hour = "" + (int) Math.floor(Math.random()*(2-(12+1))+(12));
-                String minute = "" + (int) Math.floor(Math.random()*(0-(59+1))+(59));
+                String minute = "" + (int) Math.floor(Math.random()*(1-(59+1))+(59));
                 int gate = (int) Math.floor(Math.random()*(2-(15+1))+(15));
                 int flightN = flightNumbers[j];
 
                 addFlight(airline.get(airlineN), city.get(cityN), day, month, hour, minute, gate, flightN);
             }
+            sortByDate();
         }
     }
 
@@ -71,40 +72,9 @@ public class Airport {
             minute = "0" + minute;
         }
         time = hour + ":" + minute;
-        date = "2019/" + month + "/" + day;
+        date = "2019-" + month + "-" + day;
+        flightNumber = "" + airlineN.charAt(0) + airlineN.charAt(2) + airlineN.charAt(airlineN.length() - 1) + " " + flightN;
 
-        switch (airlineN){
-            case "Avianca":
-                flightNumber = "AVA " + flightN;
-                break;
-            case "Satena":
-                flightNumber = "SA " + flightN;
-                break;
-            case "Latam":
-                flightNumber = "LTM " + flightN;
-                break;
-            case "Copa Airlines":
-                flightNumber = "CAL " + flightN;
-                break;
-            case "Wingo":
-                flightNumber = "WNO " + flightN;
-                break;
-            case "EasyFly":
-                flightNumber = "ESF " + flightN;
-                break;
-            case "Viva Colombia":
-                flightNumber = "VVA " + flightN;
-                break;
-            case "Lanco":
-                flightNumber = "LNO " + flightN;
-                break;
-            case "Tampa Cargo":
-                flightNumber = "TMC " + flightN;
-                break;
-            case "Sadelca":
-                flightNumber = "SEA " + flightN;
-                break;
-        }
         Flight flight = new Flight(date, time, airlineN, flightNumber, cityN, "" + gate);
         flightList.add(flight);
     }
@@ -121,6 +91,9 @@ public class Airport {
             words.add(line);
             line = br.readLine();
         }
+        br.close();
+        fr.close();
+
         return words;
     }
 
@@ -145,6 +118,47 @@ public class Airport {
             }
         }
         return randomNumbers;
+    }
+
+    public void sortByDate(){
+        for(int i =0; i< flightList.size(); i++) {
+            for (int j = 0; j < flightList.size() - i - 1; j++) {
+                if (flightList.get(j).getDate().compareTo(flightList.get(j + 1).getDate()) > 0) {
+                    Flight temp = flightList.get(j);
+                    flightList.set(j, flightList.get(j + 1));
+                    flightList.set(j + 1, temp);
+                }
+            }
+        }
+    }
+
+    public void sortByTime(){
+        for (int i = 0; i < flightList.size(); i++) {
+            Flight current = flightList.get(i);
+            int j = i;
+            while(j > 0 && flightList.get(j-1).getTime().compareTo(current.getTime()) > 0){
+                flightList.set(j, flightList.get(j-1));
+                j--;
+            }
+            flightList.set(j, current);
+        }
+    }
+
+    public void sortByAirline(){
+        for (int i = 0; i < flightList.size() - 1; i++) {
+            Flight min = flightList.get(i);
+            int c = i;
+
+            for (int j = i + 1; j < flightList.size(); j++) {
+                if (flightList.get(j).getAirline().compareToIgnoreCase(min.getAirline()) < 0){
+                    min = flightList.get(j);
+                    c = j;
+                }
+            }
+            Flight aux = flightList.get(i);
+            flightList.set(i, min);
+            flightList.set(c, aux);
+        }
     }
 
 }

@@ -53,17 +53,12 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#sortBySchedule" text="Sort by Schedule" />
+                    <MenuItem mnemonicParsing="false" onAction="#sortByDate" text="Sort by Date" />
                         <MenuItem mnemonicParsing="false" onAction="#sortByTime" text="Sort by Time" />
                         <MenuItem mnemonicParsing="false" onAction="#sortByAirline" text="Sort by Airlilne" />
                         <MenuItem mnemonicParsing="false" onAction="#sortByFlight" text="Sort by Flight" />
                         <MenuItem mnemonicParsing="false" onAction="#sortByCity" text="Sort by City Destination" />
                         <MenuItem mnemonicParsing="false" onAction="#sortByGate" text="Sort by Gate" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#aboutClicked" text="About" />
                   </items>
                 </Menu>
               </menus>

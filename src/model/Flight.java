@@ -1,6 +1,6 @@
 package model;
 
-public class Flight {
+public class Flight implements Comparable<Flight>{
 
     private String date;
     private String time;
@@ -64,5 +64,19 @@ public class Flight {
 
     public void setGate(String gate) {
         this.gate = gate;
+    }
+
+    @Override
+    public int compareTo(Flight o) {
+        int comparation;
+
+        if (flightNumber.compareTo(o.flightNumber) > 0){
+            comparation = 1;
+        }else if (flightNumber.compareTo(o.flightNumber) < 0){
+            comparation = -1;
+        }else{
+            comparation = 0;
+        }
+        return comparation;
     }
 }

@@ -29,10 +29,6 @@ public class NewListScreenController {
         this.stage = stage;
     }
 
-    public Airport getAirport() {
-        return airport;
-    }
-
     public void setAirport(Airport airport) {
         this.airport = airport;
     }
@@ -52,8 +48,8 @@ public class NewListScreenController {
         try{
             size = Integer.parseInt(newListSize.getText());
             airport.createData(size);
+            airport.sortByTime();
 
-            asc.setAirport(this.airport);
             asc.addInformation();
 
             stage.close();
