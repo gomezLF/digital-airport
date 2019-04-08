@@ -12,30 +12,6 @@ public class Time {
         this.dayMoment = dayMoment;
     }
 
-    public int getHour() {
-        return hour;
-    }
-
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
-
-    public int getMinute() {
-        return minute;
-    }
-
-    public void setMinute(int minute) {
-        this.minute = minute;
-    }
-
-    public String getDayMoment() {
-        return dayMoment;
-    }
-
-    public void setDayMoment(String dayMoment) {
-        this.dayMoment = dayMoment;
-    }
-
     @Override
     public String toString() {
         String h;

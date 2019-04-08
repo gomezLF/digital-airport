@@ -2,6 +2,7 @@ package userInterface;
 
 import Threads.GUIUpdateControlThread;
 import Threads.TimeThread;
+import customExceptions.EmptyDataException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,8 +22,6 @@ import java.util.Calendar;
 public class AirportScreenController {
 
     private Airport airport;
-    private Calendar calendar;
-
 
     @FXML
     private TableView<Flight> dataTable;
@@ -107,7 +106,39 @@ public class AirportScreenController {
 
     @FXML
     void searchClicked(ActionEvent event) {
+        switch (criteriaBox.getValue()){
+            case "Search by Airline":
 
+                break;
+
+            case "Search by Date":
+                try {
+                    airport.searchByDate(seeker.getText());
+                } catch (EmptyDataException e) {
+                    e.message();
+                }catch (NullPointerException e){
+                    Alert a = new Alert(Alert.AlertType.INFORMATION, "The previously searched flight does not exist, please search again with existing values.", ButtonType.OK);
+                    a.setHeaderText("Flight not found");
+                    a.show();
+                }
+                break;
+
+            case "Search by Destination city":
+
+                break;
+
+            case "Search by Flight Number":
+
+                break;
+
+            case "Search by Gate":
+
+                break;
+
+            case "Search by Time":
+
+                break;
+        }
     }
 
     @FXML
@@ -152,7 +183,7 @@ public class AirportScreenController {
     }
 
     public void updateTime(){
-        calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance();
 
         int hour = calendar.get(Calendar.HOUR);
         int minute = calendar.get(Calendar.MINUTE);

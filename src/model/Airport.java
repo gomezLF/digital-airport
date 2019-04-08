@@ -1,6 +1,8 @@
 package model;
 
 
+import customExceptions.EmptyDataException;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -195,5 +197,83 @@ public class Airport {
             flightList.set(i, min);
             flightList.set(c, aux);
         }
+    }
+    
+    public Flight searchByDate(String date) throws EmptyDataException, NullPointerException {
+        Flight searched = null;
+
+        if (date.equals("")){
+            throw new EmptyDataException();
+        }else {
+            boolean found = false;
+            int begin = 0;
+            int end = flightList.size() - 1;
+
+            while(begin <= end && !found){
+                int mid = (begin+end)/2;
+
+                if (flightList.get(mid).getDate().compareTo(date) == 0){
+                    found = true;
+                    searched = flightList.get(mid);
+                }else if (flightList.get(mid).getDate().compareTo(date) > 0){
+                    end = mid - 1;
+                }else {
+                    begin = mid + 1;
+                }
+            }
+        }
+        return searched;
+    }
+
+    public Flight searchByTime(String time) throws EmptyDataException, NullPointerException{
+        Flight searched = null;
+
+        if (time.equals("")){
+            throw new EmptyDataException();
+        }else {
+            boolean found = false;
+            int begin = 0;
+            int end = flightList.size() - 1;
+
+            while(begin <= end && !found){
+                int mid = (begin+end)/2;
+
+                if (flightList.get(mid).getTime().compareTo(time) == 0){
+                    found = true;
+                    searched = flightList.get(mid);
+                }else if (flightList.get(mid).getTime().compareTo(time) > 0){
+                    end = mid - 1;
+                }else {
+                    begin = mid + 1;
+                }
+            }
+        }
+        return searched;
+    }
+
+    public Flight searchByAirline(String airline) throws EmptyDataException, NullPointerException{
+        Flight searched = null;
+
+        if (airline.equals("")){
+            throw new EmptyDataException();
+        }else {
+            boolean found = false;
+            int begin = 0;
+            int end = flightList.size() - 1;
+
+            while(begin <= end && !found){
+                int mid = (begin+end)/2;
+
+                if (flightList.get(mid).getAirline().compareTo(airline) == 0){
+                    found = true;
+                    searched = flightList.get(mid);
+                }else if (flightList.get(mid).getAirline().compareTo(airline) > 0){
+                    end = mid - 1;
+                }else {
+                    begin = mid + 1;
+                }
+            }
+        }
+        return searched;
     }
 }
