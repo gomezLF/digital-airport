@@ -32,17 +32,13 @@ public class NewListScreenController {
         this.airport = airport;
     }
 
-    public AirportScreenController getAsc() {
-        return asc;
-    }
-
     public void setAsc(AirportScreenController asc) {
         this.asc = asc;
     }
 
     @FXML
     void createClicked(ActionEvent event) {
-        int size = 0;
+        int size;
 
         try{
             size = Integer.parseInt(newListSize.getText());

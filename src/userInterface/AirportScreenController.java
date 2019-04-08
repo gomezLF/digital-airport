@@ -1,29 +1,27 @@
 package userInterface;
 
+import Threads.GUIUpdateControlThread;
+import Threads.TimeThread;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.Airport;
 import model.Flight;
-import model.Time;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 public class AirportScreenController {
 
     private Airport airport;
+    private Calendar calendar;
 
 
     @FXML
@@ -60,6 +58,10 @@ public class AirportScreenController {
     @FXML
     void initialize() {
         airport = new Airport();
+
+        GUIUpdateControlThread gut = new GUIUpdateControlThread(this);
+        gut.setDaemon(true);
+        gut.start();
 
         criteriaBox.getItems().addAll("Search by Airline", "Search by Date", "Search by Destination city", "Search by Flight Number", "Search by Gate", "Search by Time");
 
@@ -146,6 +148,16 @@ public class AirportScreenController {
     public void addInformation(){
         ObservableList<Flight> data = FXCollections.observableList(airport.getFlightList());
         dataTable.setItems(data);
+    }
+
+    public void updateTime(){
+        calendar = Calendar.getInstance();
+
+        int hour = calendar.get(Calendar.HOUR);
+        int minute = calendar.get(Calendar.MINUTE);
+        int second =  calendar.get(Calendar.SECOND);
+
+        timeLabel.setText(hour + ":" + minute + ":" + second);
     }
 
 
