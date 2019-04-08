@@ -276,4 +276,53 @@ public class Airport {
         }
         return searched;
     }
+
+    public Flight searchByFlightNumber(String flightNumber) throws EmptyDataException, NullPointerException{
+        Flight searched = null;
+
+        if (flightNumber.equals("")){
+            throw new EmptyDataException();
+        }else {
+            boolean found = false;
+
+            for (int i = 0; i < flightList.size() && !found; i++) {
+                if (flightList.get(i).getFlightNumber().compareTo(flightNumber) == 0){
+                    found = true;
+                    searched = flightList.get(i);
+                }
+            }
+        }
+        return searched;
+    }
+
+    public Flight searchByCity(String city) throws EmptyDataException, NullPointerException{
+        Flight searched = null;
+
+        if (city.equals("")){
+            throw new EmptyDataException();
+        }else {
+            boolean found = false;
+
+            for (int i = 0; i < flightList.size() && !found; i++) {
+                if (flightList.get(i).getDestinationCity().compareTo(city) == 0){
+                    found = true;
+                    searched = flightList.get(i);
+                }
+            }
+        }
+        return searched;
+    }
+
+    public Flight searchByGate(int gate) throws NullPointerException{
+        Flight searched = null;
+        boolean found = false;
+
+        for (int i = 0; i < flightList.size() && !found; i++) {
+            if (flightList.get(i).getGate() == gate){
+                found = true;
+                searched = flightList.get(i);
+            }
+        }
+        return searched;
+    }
 }
