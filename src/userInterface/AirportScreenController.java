@@ -130,7 +130,8 @@ public class AirportScreenController {
 
     @FXML
     void sortByGate(ActionEvent event) {
-
+        airport.sortByGate();
+        addInformation();
     }
 
     @FXML
@@ -159,10 +160,4 @@ public class AirportScreenController {
 
         timeLabel.setText(hour + ":" + minute + ":" + second);
     }
-
-
-
-
-
-
 }

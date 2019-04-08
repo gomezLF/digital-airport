@@ -181,6 +181,19 @@ public class Airport {
 
 
     public void sortByGate(){
+        for (int i = 0; i < flightList.size() - 1; i++) {
+            Flight min = flightList.get(i);
+            int c = i;
 
+            for (int j = i + 1; j < flightList.size(); j++) {
+                if (flightList.get(j).getGate() < min.getGate()){
+                    min = flightList.get(j);
+                    c = j;
+                }
+            }
+            Flight aux = flightList.get(i);
+            flightList.set(i, min);
+            flightList.set(c, aux);
+        }
     }
 }
