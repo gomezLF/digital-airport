@@ -3,13 +3,13 @@ package model;
 public class Flight implements Comparable<Flight>{
 
     private String date;
-    private String time;
+    private Time time;
     private String airline;
     private String flightNumber;
     private String destinationCity;
-    private String gate;
+    private Integer gate;
 
-    public Flight(String date, String time, String airline, String flightNumber, String destinationCity, String gate) {
+    public Flight(String date, Time time, String airline, String flightNumber, String destinationCity, int gate) {
         this.date = date;
         this.time = time;
         this.airline = airline;
@@ -18,6 +18,7 @@ public class Flight implements Comparable<Flight>{
         this.gate = gate;
     }
 
+
     public String getDate() {
         return date;
     }
@@ -25,18 +26,17 @@ public class Flight implements Comparable<Flight>{
     public void setDate(String date) {
         this.date = date;
     }
-
     public String getTime() {
-        return time;
+        return time.toString();
     }
 
-    public void setTime(String time) {
+    public void setTime(Time time) {
         this.time = time;
     }
 
     public String getAirline() {
         return airline;
-    };
+    }
 
     public void setAirline(String airline) {
         this.airline = airline;
@@ -58,11 +58,11 @@ public class Flight implements Comparable<Flight>{
         this.destinationCity = destinationCity;
     }
 
-    public String getGate() {
+    public int getGate() {
         return gate;
     }
 
-    public void setGate(String gate) {
+    public void setGate(int gate) {
         this.gate = gate;
     }
 

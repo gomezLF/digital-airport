@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -11,9 +12,12 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.Airport;
 import model.Flight;
+import model.Time;
 
 import java.io.IOException;
 
@@ -60,19 +64,11 @@ public class AirportScreenController {
         criteriaBox.getItems().addAll("Search by Airline", "Search by Date", "Search by Destination city", "Search by Flight Number", "Search by Gate", "Search by Time");
 
         dateColumn.setCellValueFactory(new PropertyValueFactory<Flight, String>("date"));
-        timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
-        airlineColumn.setCellValueFactory(new PropertyValueFactory<>("airline"));
-        flightColumn.setCellValueFactory(new PropertyValueFactory<>("flightNumber"));
-        destinationColumn.setCellValueFactory(new PropertyValueFactory<>("destinationCity"));
-        gateColumn.setCellValueFactory(new PropertyValueFactory<>("gate"));
-    }
-
-    public Airport getAirport() {
-        return airport;
-    }
-
-    public void setAirport(Airport airport) {
-        this.airport = airport;
+        timeColumn.setCellValueFactory(new PropertyValueFactory<Flight, String>("time"));
+        airlineColumn.setCellValueFactory(new PropertyValueFactory<Flight, String>("airline"));
+        flightColumn.setCellValueFactory(new PropertyValueFactory<Flight, String>("flightNumber"));
+        destinationColumn.setCellValueFactory(new PropertyValueFactory<Flight, String>("destinationCity"));
+        gateColumn.setCellValueFactory(new PropertyValueFactory<Flight, String>("gate"));
     }
 
     @FXML

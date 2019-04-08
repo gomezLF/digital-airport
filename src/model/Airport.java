@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Formatter;
 import java.util.List;
 
 public class Airport {
@@ -43,21 +44,22 @@ public class Airport {
                 int cityN = (int) Math.floor(Math.random()*CITY_DATA_SIZE);
                 String day = "" +  (int) Math.floor(Math.random()*(2-(30+1))+(30));
                 String month = "" + (int) Math.floor(Math.random()*(5-(12+1))+(12));
-                String hour = "" + (int) Math.floor(Math.random()*(2-(12+1))+(12));
-                String minute = "" + (int) Math.floor(Math.random()*(1-(59+1))+(59));
+                int hour = (int) Math.floor(Math.random()*(2-(12+1))+(12));
+                int minute =(int) Math.floor(Math.random()*(1-(59+1))+(59));
+                int dayMoment = (int) Math.floor(Math.random()*(2-(3+1))+(3));
                 int gate = (int) Math.floor(Math.random()*(2-(15+1))+(15));
                 int flightN = flightNumbers[j];
 
-                addFlight(airline.get(airlineN), city.get(cityN), day, month, hour, minute, gate, flightN);
+                addFlight(airline.get(airlineN), city.get(cityN), day, month, hour, minute, dayMoment, gate, flightN);
             }
             sortByDate();
         }
     }
 
-    private void addFlight(String airlineN, String cityN, String day, String month, String hour, String minute, int gate, int flightN){
+    private void addFlight(String airlineN, String cityN, String day, String month, int hour, int minute, int dayMoment, int gate, int flightN){
         String flightNumber = "";
         String date = "";
-        String time = "";
+        String dayM = "";
 
         if (Integer.parseInt(day) < 10){
             day = "0" + day;
@@ -65,17 +67,20 @@ public class Airport {
         if (Integer.parseInt(month) < 10){
             month = "0" + month;
         }
-        if (Integer.parseInt(hour) < 10){
-            hour = "0" + hour;
+
+        switch (dayMoment){
+            case 1:
+                dayM = "AM";
+                break;
+            case 2:
+                dayM = "PM";
+                break;
         }
-        if (Integer.parseInt(minute) < 10){
-            minute = "0" + minute;
-        }
-        time = hour + ":" + minute;
+        Time t = new Time(hour, minute, dayM);
         date = "2019-" + month + "-" + day;
         flightNumber = "" + airlineN.charAt(0) + airlineN.charAt(2) + airlineN.charAt(airlineN.length() - 1) + " " + flightN;
 
-        Flight flight = new Flight(date, time, airlineN, flightNumber, cityN, "" + gate);
+        Flight flight = new Flight(date, t, airlineN, flightNumber, cityN,gate);
         flightList.add(flight);
     }
 
@@ -120,6 +125,7 @@ public class Airport {
         return randomNumbers;
     }
 
+
     public void sortByDate(){
         for(int i =0; i< flightList.size(); i++) {
             for (int j = 0; j < flightList.size() - i - 1; j++) {
@@ -132,6 +138,7 @@ public class Airport {
         }
     }
 
+
     public void sortByTime(){
         for (int i = 0; i < flightList.size(); i++) {
             Flight current = flightList.get(i);
@@ -143,6 +150,7 @@ public class Airport {
             flightList.set(j, current);
         }
     }
+
 
     public void sortByAirline(){
         for (int i = 0; i < flightList.size() - 1; i++) {
@@ -166,8 +174,13 @@ public class Airport {
         Collections.sort(flightList);
     }
 
+
     public void sortByDestination(){
         Collections.sort(flightList, new CityDestinationComparator());
     }
 
+
+    public void sortByGate(){
+
+    }
 }
