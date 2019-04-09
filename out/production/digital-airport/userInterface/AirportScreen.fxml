@@ -25,10 +25,10 @@
         <columns>
           <TableColumn fx:id="dateColumn" editable="false" prefWidth="99.85484516620636" resizable="false" sortable="false" text="DATE" />
             <TableColumn fx:id="timeColumn" editable="false" prefWidth="119.7727279663086" resizable="false" sortable="false" text="TIME" />
-            <TableColumn fx:id="airlineColumn" editable="false" prefWidth="208.2272491455078" resizable="false" sortable="false" text="AIRLINE" />
-            <TableColumn fx:id="flightColumn" editable="false" minWidth="8.720306396484375" prefWidth="194.49301147460938" resizable="false" sortable="false" text="FLIGHT" />
+            <TableColumn fx:id="airlineColumn" editable="false" prefWidth="228.0" resizable="false" sortable="false" text="AIRLINE" />
+            <TableColumn fx:id="flightColumn" editable="false" minWidth="8.720306396484375" prefWidth="176.0" resizable="false" sortable="false" text="FLIGHT" />
             <TableColumn fx:id="destinationColumn" editable="false" prefWidth="154.043701171875" resizable="false" sortable="false" text="TO" />
-          <TableColumn fx:id="gateColumn" editable="false" prefWidth="124.4930419921875" resizable="false" sortable="false" text="GATE" />
+          <TableColumn fx:id="gateColumn" editable="false" prefWidth="120.0" resizable="false" sortable="false" text="GATE" />
         </columns>
       </TableView>
    </center>
@@ -66,13 +66,13 @@
             <Pane prefHeight="200.0" prefWidth="900.0" GridPane.rowIndex="1">
                <children>
                   <TextField fx:id="seeker" layoutX="34.0" layoutY="16.0" />
-                  <Button layoutX="82.0" layoutY="48.0" mnemonicParsing="false" onAction="#searchClicked" text="Search">
+                  <Button layoutX="82.0" layoutY="48.0" mnemonicParsing="false" onAction="#searchClicked" style="-fx-background-color: orange; -fx-background-radius: 20;" text="Search">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <ComboBox fx:id="criteriaBox" layoutX="212.0" layoutY="28.0" prefHeight="25.0" prefWidth="170.0" promptText="Cirteria" />
-                  <Separator layoutX="447.0" orientation="VERTICAL" prefHeight="95.0" />
+                  <ComboBox fx:id="criteriaBox" layoutX="212.0" layoutY="28.0" prefHeight="25.0" prefWidth="170.0" promptText="Cirteria" style="-fx-background-radius: 10;" />
+                  <Separator layoutX="447.0" layoutY="1.0" orientation="VERTICAL" prefHeight="95.0" />
                   <Label fx:id="timeLabel" alignment="CENTER" layoutX="598.0" layoutY="19.0" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="40.0" />
@@ -85,12 +85,12 @@
    <bottom>
       <HBox alignment="CENTER" fillHeight="false" prefHeight="50.0" prefWidth="900.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#previousClicked" text="&lt;--" textAlignment="CENTER">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#previousClicked" style="-fx-background-color: orange; -fx-background-radius: 20;" text="&lt;--" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#nextClicked" text="--&gt;" textAlignment="CENTER">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#nextClicked" style="-fx-background-color: orange; -fx-background-radius: 20;" text="--&gt;" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

@@ -1,7 +1,6 @@
 package userInterface;
 
-import Threads.GUIUpdateControlThread;
-import Threads.TimeThread;
+import threads.GUIUpdateControlThread;
 import customExceptions.EmptyDataException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +17,7 @@ import model.Flight;
 
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.List;
 
 public class AirportScreenController {
 
@@ -106,88 +106,170 @@ public class AirportScreenController {
 
     @FXML
     void searchClicked(ActionEvent event) {
-        switch (criteriaBox.getValue()){
-            case "Search by Airline":
+        if (airport.getFlightList().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING, "There is no list created to search for an item.", ButtonType.OK);
+            alert.setHeaderText("Please, create a new List to search an item");
+            alert.show();
 
-                break;
-
-            case "Search by Date":
-                try {
-                    airport.searchByDate(seeker.getText());
-                } catch (EmptyDataException e) {
-                    e.message();
-                }catch (NullPointerException e){
-                    Alert a = new Alert(Alert.AlertType.INFORMATION, "The previously searched flight does not exist, please search again with existing values.", ButtonType.OK);
-                    a.setHeaderText("Flight not found");
-                    a.show();
+        }else {
+            Flight f = null;
+            try {
+                switch (criteriaBox.getValue()){
+                    case "Search by Airline":
+                        searchAirline();
+                        break;
+                    case "Search by Date":
+                        searchDate();
+                        break;
+                    case "Search by Destination city":
+                        searchCity();
+                        break;
+                    case "Search by Flight Number":
+                        searchFlightNumber();
+                        break;
+                    case "Search by Gate":
+                        searchGate();
+                        break;
+                    case "Search by Time":
+                        searchTime();
+                        break;
                 }
-                break;
-
-            case "Search by Destination city":
-
-                break;
-
-            case "Search by Flight Number":
-
-                break;
-
-            case "Search by Gate":
-
-                break;
-
-            case "Search by Time":
-
-                break;
+            }catch (NullPointerException e){
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Caused by \n" + "Criteria fild is empty", ButtonType.CLOSE);
+                alert.setHeaderText("To search an element in the list, fill all the fields");
+                alert.show();
+            }
         }
     }
 
     @FXML
     void sortByAirline(ActionEvent event) {
         airport.sortByAirline();
-        addInformation();
+        dataTable.getItems().clear();
+        addInformation(airport.getFlightList());
     }
 
     @FXML
     void sortByCity(ActionEvent event) {
         airport.sortByDestination();
-        addInformation();
+        dataTable.getItems().clear();
+        addInformation(airport.getFlightList());
     }
 
     @FXML
     void sortByFlight(ActionEvent event) {
         airport.sortByFlightNumber();
-        addInformation();
+        dataTable.getItems().clear();
+        addInformation(airport.getFlightList());
     }
 
     @FXML
     void sortByGate(ActionEvent event) {
         airport.sortByGate();
-        addInformation();
+        dataTable.getItems().clear();
+        addInformation(airport.getFlightList());
     }
 
     @FXML
     void sortByDate(ActionEvent event) {
         airport.sortByDate();
-        addInformation();
+        dataTable.getItems().clear();
+        addInformation(airport.getFlightList());
     }
 
     @FXML
     void sortByTime(ActionEvent event) {
         airport.sortByTime();
-        addInformation();
+        dataTable.getItems().clear();
+        addInformation(airport.getFlightList());
     }
 
-    public void addInformation(){
-        ObservableList<Flight> data = FXCollections.observableList(airport.getFlightList());
-        dataTable.setItems(data);
+    private void searchAirline(){
+        try {
+            Flight f = airport.searchByAirline(seeker.getText());
+            dataTable.getItems().clear();
+            dataTable.getItems().add(f);
+        } catch (EmptyDataException e) {
+            e.message();
+        }
+    }
+
+    private void searchDate(){
+        try {
+            Flight f = airport.searchByDate(seeker.getText());
+            dataTable.getItems().clear();
+            dataTable.getItems().add(f);
+        } catch (EmptyDataException e) {
+            e.message();
+        }
+    }
+
+    private void searchCity(){
+        try {
+            Flight f = airport.searchByCity(seeker.getText());
+            dataTable.getItems().clear();
+            dataTable.getItems().add(f);
+        } catch (EmptyDataException e) {
+            e.message();
+        }
+    }
+
+    private void searchFlightNumber(){
+        try {
+            Flight f = airport.searchByFlightNumber(seeker.getText());
+            dataTable.getItems().clear();
+            dataTable.getItems().add(f);
+        } catch (EmptyDataException e) {
+            e.message();
+        }
+    }
+
+    private void searchGate(){
+        try {
+            Flight f = airport.searchByGate(Integer.parseInt(seeker.getText()));
+            dataTable.getItems().clear();
+            dataTable.getItems().add(f);
+        } catch (NumberFormatException e) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "Caused by: \n" + "The field to search an element is empty or an invalid character has been entered.", ButtonType.CLOSE);
+            a.setHeaderText("Please, to search the gate, enter a valid gate number");
+            a.show();
+        }
+    }
+
+    private void searchTime(){
+        try {
+            Flight f = airport.searchByTime(seeker.getText());
+            dataTable.getItems().clear();
+            dataTable.getItems().add(f);
+        } catch (EmptyDataException e) {
+            e.message();
+        }
+    }
+
+    public void addInformation(List<Flight> list){
+        ObservableList<Flight> data = FXCollections.observableList(list);
+        dataTable.getItems().addAll(data);
     }
 
     public void updateTime(){
         Calendar calendar = Calendar.getInstance();
 
-        int hour = calendar.get(Calendar.HOUR);
-        int minute = calendar.get(Calendar.MINUTE);
-        int second =  calendar.get(Calendar.SECOND);
+        String hour = "" +  calendar.get(Calendar.HOUR);
+        String minute = "" +  calendar.get(Calendar.MINUTE);
+        String second = "" +   calendar.get(Calendar.SECOND);
+
+        if (Integer.parseInt(hour) < 10){
+            hour = "0" + hour;
+        }
+        if (Integer.parseInt(minute) < 10){
+            minute = "0" + minute;
+        }
+        if (Integer.parseInt(second) < 10){
+            second = "0" + second;
+        }
+        if (hour.equals("00")){
+            hour = "12";
+        }
 
         timeLabel.setText(hour + ":" + minute + ":" + second);
     }

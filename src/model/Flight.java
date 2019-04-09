@@ -7,7 +7,7 @@ public class Flight implements Comparable<Flight>{
     private String airline;
     private String flightNumber;
     private String destinationCity;
-    private Integer gate;
+    private int gate;
 
     public Flight(String date, Time time, String airline, String flightNumber, String destinationCity, int gate) {
         this.date = date;
@@ -23,47 +23,24 @@ public class Flight implements Comparable<Flight>{
         return date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
     public String getTime() {
         return time.toString();
-    }
-
-    public void setTime(Time time) {
-        this.time = time;
     }
 
     public String getAirline() {
         return airline;
     }
 
-    public void setAirline(String airline) {
-        this.airline = airline;
-    }
-
     public String getFlightNumber() {
         return flightNumber;
-    }
-
-    public void setFlightNumber(String flightNumber) {
-        this.flightNumber = flightNumber;
     }
 
     public String getDestinationCity() {
         return destinationCity;
     }
 
-    public void setDestinationCity(String destinationCity) {
-        this.destinationCity = destinationCity;
-    }
-
     public int getGate() {
         return gate;
-    }
-
-    public void setGate(int gate) {
-        this.gate = gate;
     }
 
     @Override

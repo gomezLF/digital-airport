@@ -1,4 +1,4 @@
-package Threads;
+package threads;
 
 import javafx.application.Platform;
 import userInterface.AirportScreenController;

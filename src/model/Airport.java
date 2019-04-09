@@ -9,7 +9,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Formatter;
 import java.util.List;
 
 public class Airport {
@@ -199,12 +198,14 @@ public class Airport {
         }
     }
     
-    public Flight searchByDate(String date) throws EmptyDataException, NullPointerException {
+    public Flight searchByDate(String date) throws EmptyDataException {
         Flight searched = null;
 
         if (date.equals("")){
             throw new EmptyDataException();
         }else {
+            sortByDate();
+
             boolean found = false;
             int begin = 0;
             int end = flightList.size() - 1;
@@ -225,12 +226,14 @@ public class Airport {
         return searched;
     }
 
-    public Flight searchByTime(String time) throws EmptyDataException, NullPointerException{
+    public Flight searchByTime(String time) throws EmptyDataException {
         Flight searched = null;
 
         if (time.equals("")){
             throw new EmptyDataException();
         }else {
+            sortByTime();
+
             boolean found = false;
             int begin = 0;
             int end = flightList.size() - 1;
@@ -251,12 +254,14 @@ public class Airport {
         return searched;
     }
 
-    public Flight searchByAirline(String airline) throws EmptyDataException, NullPointerException{
+    public Flight searchByAirline(String airline) throws EmptyDataException {
         Flight searched = null;
 
         if (airline.equals("")){
             throw new EmptyDataException();
         }else {
+            sortByAirline();
+
             boolean found = false;
             int begin = 0;
             int end = flightList.size() - 1;
@@ -277,7 +282,7 @@ public class Airport {
         return searched;
     }
 
-    public Flight searchByFlightNumber(String flightNumber) throws EmptyDataException, NullPointerException{
+    public Flight searchByFlightNumber(String flightNumber) throws EmptyDataException {
         Flight searched = null;
 
         if (flightNumber.equals("")){
@@ -295,7 +300,7 @@ public class Airport {
         return searched;
     }
 
-    public Flight searchByCity(String city) throws EmptyDataException, NullPointerException{
+    public Flight searchByCity(String city) throws EmptyDataException {
         Flight searched = null;
 
         if (city.equals("")){
@@ -313,7 +318,7 @@ public class Airport {
         return searched;
     }
 
-    public Flight searchByGate(int gate) throws NullPointerException{
+    public Flight searchByGate(int gate){
         Flight searched = null;
         boolean found = false;
 
