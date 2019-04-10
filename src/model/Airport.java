@@ -13,6 +13,8 @@ import java.util.List;
 
 public class Airport {
 
+    public static final int ROWS_PER_PAGE = 20;
+
     private static final int AIRLINE_DATA_SIZE = 10;
     private static final int CITY_DATA_SIZE = 30;
 
@@ -105,7 +107,7 @@ public class Airport {
 
     private int[] createRandomNumbers(int i){
         int min = 1000;
-        int max = 9999;
+        int max = 50000;
 
         int[] randomNumbers = new int[i];
 
@@ -329,5 +331,14 @@ public class Airport {
             }
         }
         return searched;
+    }
+
+    public int[] createPage(int pageIndex){
+        int fromIndex = pageIndex * ROWS_PER_PAGE;
+        int toIndex = Math.min(fromIndex + ROWS_PER_PAGE, flightList.size());
+
+        int[] array = new int[] {fromIndex, toIndex};
+
+        return array;
     }
 }

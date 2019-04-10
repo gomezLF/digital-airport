@@ -11,6 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("AirportScreen.fxml"));
+        stage.setResizable(false);
         stage.setTitle("General information");
         stage.setScene(new Scene(root));
         stage.show();

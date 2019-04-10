@@ -1,9 +1,9 @@
 package userInterface;
 
+import javafx.scene.control.Button;
 import threads.GUIUpdateControlThread;
 import customExceptions.EmptyDataException;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,14 +14,16 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Airport;
 import model.Flight;
-
+import javafx.scene.control.Pagination;
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.List;
+import java.util.Collection;
 
 public class AirportScreenController {
 
     private Airport airport;
+
+    private int pagination;
 
     @FXML
     private TableView<Flight> dataTable;
@@ -53,14 +55,17 @@ public class AirportScreenController {
     @FXML
     private Label timeLabel;
 
+    @FXML
+    private Button previousButton;
+
+    @FXML
+    private Button nextButton;
+
 
     @FXML
     void initialize() {
         airport = new Airport();
-
-        GUIUpdateControlThread gut = new GUIUpdateControlThread(this);
-        gut.setDaemon(true);
-        gut.start();
+        pagination = 0;
 
         criteriaBox.getItems().addAll("Search by Airline", "Search by Date", "Search by Destination city", "Search by Flight Number", "Search by Gate", "Search by Time");
 
@@ -70,6 +75,25 @@ public class AirportScreenController {
         flightColumn.setCellValueFactory(new PropertyValueFactory<Flight, String>("flightNumber"));
         destinationColumn.setCellValueFactory(new PropertyValueFactory<Flight, String>("destinationCity"));
         gateColumn.setCellValueFactory(new PropertyValueFactory<Flight, String>("gate"));
+
+        previousButton.setDisable(true);
+        nextButton.setDisable(true);
+
+        GUIUpdateControlThread gut = new GUIUpdateControlThread(this);
+        gut.setDaemon(true);
+        gut.start();
+    }
+
+    @FXML
+    void nextClicked(ActionEvent event) {
+        pagination ++;
+        addInformation();
+    }
+
+    @FXML
+    void previousClicked(ActionEvent event) {
+        pagination --;
+        addInformation();
     }
 
     @FXML
@@ -92,16 +116,6 @@ public class AirportScreenController {
         ns.setAirport(this.airport);
         ns.setStage(stage);
         ns.setAsc(this);
-    }
-
-    @FXML
-    void nextClicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void previousClicked(ActionEvent event) {
-
     }
 
     @FXML
@@ -146,47 +160,56 @@ public class AirportScreenController {
     void sortByAirline(ActionEvent event) {
         airport.sortByAirline();
         dataTable.getItems().clear();
-        addInformation(airport.getFlightList());
+        addInformation();
     }
 
     @FXML
     void sortByCity(ActionEvent event) {
         airport.sortByDestination();
         dataTable.getItems().clear();
-        addInformation(airport.getFlightList());
+        pagination = 0;
+        addInformation();
     }
 
     @FXML
     void sortByFlight(ActionEvent event) {
         airport.sortByFlightNumber();
         dataTable.getItems().clear();
-        addInformation(airport.getFlightList());
+        pagination = 0;
+        addInformation();
     }
 
     @FXML
     void sortByGate(ActionEvent event) {
         airport.sortByGate();
         dataTable.getItems().clear();
-        addInformation(airport.getFlightList());
+        pagination = 0;
+        addInformation();
     }
 
     @FXML
     void sortByDate(ActionEvent event) {
         airport.sortByDate();
         dataTable.getItems().clear();
-        addInformation(airport.getFlightList());
+        pagination = 0;
+        addInformation();
     }
 
     @FXML
     void sortByTime(ActionEvent event) {
         airport.sortByTime();
         dataTable.getItems().clear();
-        addInformation(airport.getFlightList());
+        pagination = 0;
+        addInformation();
     }
 
     private void searchAirline(){
         try {
             Flight f = airport.searchByAirline(seeker.getText());
+
+            previousButton.setDisable(true);
+            nextButton.setDisable(true);
+
             dataTable.getItems().clear();
             dataTable.getItems().add(f);
         } catch (EmptyDataException e) {
@@ -197,6 +220,10 @@ public class AirportScreenController {
     private void searchDate(){
         try {
             Flight f = airport.searchByDate(seeker.getText());
+
+            previousButton.setDisable(true);
+            nextButton.setDisable(true);
+
             dataTable.getItems().clear();
             dataTable.getItems().add(f);
         } catch (EmptyDataException e) {
@@ -207,6 +234,10 @@ public class AirportScreenController {
     private void searchCity(){
         try {
             Flight f = airport.searchByCity(seeker.getText());
+
+            previousButton.setDisable(true);
+            nextButton.setDisable(true);
+
             dataTable.getItems().clear();
             dataTable.getItems().add(f);
         } catch (EmptyDataException e) {
@@ -217,6 +248,10 @@ public class AirportScreenController {
     private void searchFlightNumber(){
         try {
             Flight f = airport.searchByFlightNumber(seeker.getText());
+
+            previousButton.setDisable(true);
+            nextButton.setDisable(true);
+
             dataTable.getItems().clear();
             dataTable.getItems().add(f);
         } catch (EmptyDataException e) {
@@ -227,6 +262,10 @@ public class AirportScreenController {
     private void searchGate(){
         try {
             Flight f = airport.searchByGate(Integer.parseInt(seeker.getText()));
+
+            previousButton.setDisable(true);
+            nextButton.setDisable(true);
+
             dataTable.getItems().clear();
             dataTable.getItems().add(f);
         } catch (NumberFormatException e) {
@@ -239,6 +278,10 @@ public class AirportScreenController {
     private void searchTime(){
         try {
             Flight f = airport.searchByTime(seeker.getText());
+
+            previousButton.setDisable(true);
+            nextButton.setDisable(true);
+
             dataTable.getItems().clear();
             dataTable.getItems().add(f);
         } catch (EmptyDataException e) {
@@ -246,8 +289,22 @@ public class AirportScreenController {
         }
     }
 
-    public void addInformation(List<Flight> list){
-        ObservableList<Flight> data = FXCollections.observableList(list);
+    public void addInformation(){
+        int[] array = airport.createPage(pagination);
+
+        if (array[0] == 0){
+            previousButton.setDisable(true);
+        }else {
+            previousButton.setDisable(false);
+        }
+        if (array[1] == airport.getFlightList().size()){
+            nextButton.setDisable(true);
+        }else {
+            nextButton.setDisable(false);
+        }
+
+        dataTable.getItems().clear();
+        Collection<Flight> data = FXCollections.observableList(airport.getFlightList().subList(array[0], array[1]));
         dataTable.getItems().addAll(data);
     }
 
@@ -270,7 +327,6 @@ public class AirportScreenController {
         if (hour.equals("00")){
             hour = "12";
         }
-
         timeLabel.setText(hour + ":" + minute + ":" + second);
     }
 }

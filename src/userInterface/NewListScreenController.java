@@ -45,7 +45,7 @@ public class NewListScreenController {
             airport.createData(size);
             airport.sortByTime();
 
-            asc.addInformation(airport.getFlightList());
+            asc.addInformation();
 
             stage.close();
         }catch (NumberFormatException  | NegativeArraySizeException e){

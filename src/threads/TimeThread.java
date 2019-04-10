@@ -13,6 +13,5 @@ public class TimeThread extends Thread{
     @Override
     public void run(){
         asc.updateTime();
-
     }
 }
