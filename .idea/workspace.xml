@@ -103,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Airport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-340">
+            <state relative-caret-position="-436">
               <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
               <folding>
                 <element signature="method#createData#0;class#Airport#0" />
@@ -113,8 +113,6 @@
                 <element signature="method#sortByDate#0;class#Airport#0" />
                 <element signature="method#sortByTime#0;class#Airport#0" />
                 <element signature="method#sortByAirline#0;class#Airport#0" />
-                <element signature="e#5712#5713#0" expanded="true" />
-                <element signature="e#5756#5757#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,8 +121,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/modelTest/AirportTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="251" column="37" selection-start-line="251" selection-start-column="37" selection-end-line="251" selection-end-column="37" />
+            <state relative-caret-position="92">
+              <caret line="318" column="116" selection-start-line="318" selection-start-column="116" selection-end-line="318" selection-end-column="116" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#409#410#0" expanded="true" />
@@ -394,12 +392,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AirportTest - 2019.04.11 at 09h 15m 08s.xml">
-      <configuration name="AirportTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AirportTest - 2019.04.11 at 09h 15m 27s.xml">
-      <configuration name="AirportTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AirportTest - 2019.04.11 at 09h 16m 30s.xml">
       <configuration name="AirportTest" configurationId="JUnit" />
     </history-entry>
@@ -422,6 +414,12 @@
       <configuration name="AirportTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="AirportTest - 2019.04.11 at 09h 36m 29s.xml">
+      <configuration name="AirportTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AirportTest - 2019.04.11 at 09h 38m 19s.xml">
+      <configuration name="AirportTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AirportTest - 2019.04.11 at 09h 46m 57s.xml">
       <configuration name="AirportTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -656,7 +654,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Airport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
+        <state relative-caret-position="-436">
           <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
           <folding>
             <element signature="method#createData#0;class#Airport#0" />
@@ -666,16 +664,14 @@
             <element signature="method#sortByDate#0;class#Airport#0" />
             <element signature="method#sortByTime#0;class#Airport#0" />
             <element signature="method#sortByAirline#0;class#Airport#0" />
-            <element signature="e#5712#5713#0" expanded="true" />
-            <element signature="e#5756#5757#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/modelTest/AirportTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="251" column="37" selection-start-line="251" selection-start-column="37" selection-end-line="251" selection-end-column="37" />
+        <state relative-caret-position="92">
+          <caret line="318" column="116" selection-start-line="318" selection-start-column="116" selection-end-line="318" selection-end-column="116" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#409#410#0" expanded="true" />

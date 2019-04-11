@@ -97,7 +97,31 @@ class AirportTest {
     }
 
     private void setupScenary8(){
-        
+        airport = new Airport();
+        int size = 100;
+
+        try {
+            airport.createData(size, AIRPORT_AIRLINE_DATA_TEST, AIRPORT_CITY_DATA_TEST);
+        } catch (IOException e) {
+            fail("The files where the data is, was not found");
+        } catch (NegativeArraySizeException e) {
+            fail("The size of the new list is a negative number");
+        }
+        airport.sortByDestination();
+    }
+
+    private void setupScenary9(){
+        airport = new Airport();
+        int size = 150;
+
+        try {
+            airport.createData(size, AIRPORT_AIRLINE_DATA_TEST, AIRPORT_CITY_DATA_TEST);
+        } catch (IOException e) {
+            fail("The files where the data is, was not found");
+        } catch (NegativeArraySizeException e) {
+            fail("The size of the new list is a negative number");
+        }
+        airport.sortByGate();
     }
 
     @Test
@@ -264,7 +288,46 @@ class AirportTest {
 
     @Test
     public void sortByDestinationTest(){
+        //Se prueba el metodo de ordenamiento por ciudad de destino con una pequeña cantidad de datos
+        setupScenary8();
 
+        List<Flight> flightList = airport.getFlightList();
+
+        for (int i = 0; i < flightList.size() - 1; i++) {
+            assertTrue(flightList.get(i).getDestinationCity().compareTo(flightList.get(i+1).getDestinationCity()) < 0 || flightList.get(i).getDestinationCity().compareTo(flightList.get(i+1).getDestinationCity())  == 0, "The destination city on flight " + i + " is greater than on flight " + (i+1));
+        }
+
+        //Se prueba el metodo de ordenamiento por ciudad de destino con una cantidad de datos grande
+        setupScenary3();
+        airport.sortByDestination();
+
+        List<Flight> flightList2 = airport.getFlightList();
+
+        for (int i = 0; i < flightList2.size() - 1; i++) {
+            assertTrue(flightList2.get(i).getDestinationCity().compareTo(flightList2.get(i+1).getDestinationCity()) < 0 || flightList2.get(i).getDestinationCity().compareTo(flightList2.get(i+1).getDestinationCity())  == 0, "The destination city on flight " + i + " is greater than on flight" + (i+1));
+        }
+    }
+
+    @Test
+    public void sortByGateTest(){
+        //Se prueba el metodo de ordenamiento por ciudad de destino con una pequeña cantidad de datos
+        setupScenary9();
+
+        List<Flight> flightList = airport.getFlightList();
+
+        for (int i = 0; i < flightList.size() - 1; i++) {
+            assertTrue(flightList.get(i).getGate() < flightList.get(i+1).getGate() || flightList.get(i).getGate() == flightList.get(i+1).getGate(), "The gate on flight " + i + " is greater than on flight " + (i+1));
+        }
+
+        //Se prueba el metodo de ordenamiento por ciudad de destino con una cantidad de datos grande
+        setupScenary3();
+        airport.sortByGate();
+
+        List<Flight> flightList2 = airport.getFlightList();
+
+        for (int i = 0; i < flightList2.size() - 1; i++) {
+            assertTrue(flightList2.get(i).getGate() < flightList2.get(i+1).getGate() || flightList2.get(i).getGate() == flightList2.get(i+1).getGate(), "The gate on flight " + i + " is greater than on flight" + (i+1));
+        }
     }
 
 }
