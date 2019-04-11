@@ -26,6 +26,20 @@ class AirportTest {
 
     private void setupScenary3(){
         airport = new Airport();
+
+        int size = 1000;
+
+        try {
+            airport.createData(size, AIRPORT_AIRLINE_DATA_TEST, AIRPORT_CITY_DATA_TEST);
+        } catch (IOException e) {
+            fail("The files where the data is, was not found");
+        } catch (NegativeArraySizeException e) {
+            fail("The size of the new list is a negative number");
+        }
+    }
+
+    private void setupScenary4(){
+        airport = new Airport();
         int size = 50;
 
         try {
@@ -37,6 +51,53 @@ class AirportTest {
         }
 
         airport.sortByDate();
+    }
+
+    private void setupScenary5(){
+        airport = new Airport();
+        int size = 100;
+
+        try {
+            airport.createData(size, AIRPORT_AIRLINE_DATA_TEST, AIRPORT_CITY_DATA_TEST);
+        } catch (IOException e) {
+            fail("The files where the data is, was not found");
+        } catch (NegativeArraySizeException e) {
+            fail("The size of the new list is a negative number");
+        }
+
+        airport.sortByTime();
+    }
+
+    private void setupScenary6(){
+        airport = new Airport();
+        int size = 150;
+
+        try {
+            airport.createData(size, AIRPORT_AIRLINE_DATA_TEST, AIRPORT_CITY_DATA_TEST);
+        } catch (IOException e) {
+            fail("The files where the data is, was not found");
+        } catch (NegativeArraySizeException e) {
+            fail("The size of the new list is a negative number");
+        }
+        airport.sortByAirline();
+    }
+
+    private void setupScenary7(){
+        airport = new Airport();
+        int size = 50;
+
+        try {
+            airport.createData(size, AIRPORT_AIRLINE_DATA_TEST, AIRPORT_CITY_DATA_TEST);
+        } catch (IOException e) {
+            fail("The files where the data is, was not found");
+        } catch (NegativeArraySizeException e) {
+            fail("The size of the new list is a negative number");
+        }
+        airport.sortByFlightNumber();
+    }
+
+    private void setupScenary8(){
+        
     }
 
     @Test
@@ -115,13 +176,95 @@ class AirportTest {
 
     @Test
     public void sortByDateTest(){
-        setupScenary3();
+        //Se prueba el metodo de ordenamiento por fecha con una pequeña cantidad de datos
+        setupScenary4();
 
         List<Flight> flightList = airport.getFlightList();
 
         for (int i = 0; i < flightList.size() - 1; i++) {
             assertTrue(flightList.get(i).getDate().compareTo(flightList.get(i+1).getDate()) < 0 || flightList.get(i).getDate().compareTo(flightList.get(i+1).getDate())  == 0, "The date on flight " + i + " is greater than on flight" + (i+1));
         }
+
+        //Se prueba el metodo de ordenamiento por fecha con una cantidad grande de datos
+        setupScenary3();
+        airport.sortByDate();
+
+        List<Flight> flightList2 = airport.getFlightList();
+
+        for (int i = 0; i < flightList2.size() - 1; i++) {
+            assertTrue(flightList2.get(i).getDate().compareTo(flightList2.get(i+1).getDate()) < 0 || flightList2.get(i).getDate().compareTo(flightList2.get(i+1).getDate())  == 0, "The date on flight " + i + " is greater than on flight" + (i+1));
+        }
+    }
+
+    @Test
+    public void sortByTimeTest(){
+        //Se prueba el metodo de ordenamiento por hora con una pequeña cantidad de datos
+        setupScenary5();
+
+        List<Flight> flightList = airport.getFlightList();
+
+        for (int i = 0; i < flightList.size() - 1; i++) {
+            assertTrue(flightList.get(i).getTime().compareTo(flightList.get(i+1).getTime()) < 0 || flightList.get(i).getTime().compareTo(flightList.get(i+1).getTime())  == 0, "The time on flight " + i + " is greater than on flight " + (i+1));
+        }
+
+        //Se prueba el metodo de ordenamiento por hora con una cantidad grande de datos
+        setupScenary3();
+        airport.sortByTime();
+
+        List<Flight> flightList2 = airport.getFlightList();
+
+        for (int i = 0; i < flightList2.size() - 1; i++) {
+            assertTrue(flightList2.get(i).getTime().compareTo(flightList2.get(i+1).getTime()) < 0 || flightList2.get(i).getTime().compareTo(flightList2.get(i+1).getTime())  == 0, "The time on flight " + i + " is greater than on flight" + (i+1));
+        }
+    }
+
+    @Test
+    public void sortByAirlineTest(){
+        //Se prueba el metodo de ordenamiento por aerolinea con una pequeña cantidad de datos
+        setupScenary6();
+
+        List<Flight> flightList = airport.getFlightList();
+
+        for (int i = 0; i < flightList.size() - 1; i++) {
+            assertTrue(flightList.get(i).getAirline().compareTo(flightList.get(i+1).getAirline()) < 0 || flightList.get(i).getAirline().compareTo(flightList.get(i+1).getAirline())  == 0, "The airline on flight " + i + " is greater than on flight " + (i+1));
+        }
+
+        //Se prueba el metodo de ordenamiento por aerolinia con una cantidad de datos grande
+        setupScenary3();
+        airport.sortByAirline();
+
+        List<Flight> flightList2 = airport.getFlightList();
+
+        for (int i = 0; i < flightList2.size() - 1; i++) {
+            assertTrue(flightList2.get(i).getAirline().compareTo(flightList2.get(i+1).getAirline()) < 0 || flightList2.get(i).getAirline().compareTo(flightList2.get(i+1).getAirline())  == 0, "The airline on flight " + i + " is greater than on flight" + (i+1));
+        }
+    }
+
+    @Test
+    public void sortByFlightNumberTest(){
+        //Se prueba el metodo de ordenamiento por numero de vuelo, con una pequeña cantidad de datos
+        setupScenary7();
+
+        List<Flight> flightList = airport.getFlightList();
+
+        for (int i = 0; i < flightList.size() - 1; i++) {
+            assertTrue(flightList.get(i).getFlightNumber().compareTo(flightList.get(i+1).getFlightNumber()) < 0, "The flight number on flight " + i + " is greater than on flight " + (i+1));
+        }
+
+        //Se prueba el metodo de ordenamiento por numero de vuelo, con una cantidad de datos grande
+        setupScenary3();
+        airport.sortByFlightNumber();
+
+        List<Flight> flightList2 = airport.getFlightList();
+
+        for (int i = 0; i < flightList2.size() - 1; i++) {
+            assertTrue(flightList2.get(i).getFlightNumber().compareTo(flightList2.get(i+1).getFlightNumber()) < 0, "The flight number on flight " + i + " is greater than on flight" + (i+1));
+        }
+    }
+
+    @Test
+    public void sortByDestinationTest(){
+
     }
 
 }
