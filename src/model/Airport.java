@@ -103,8 +103,8 @@ public class Airport {
     }
 
     private int[] createFlightNumbers(int i){
-        int min = 1000;
-        int max = 50000;
+        int min = 10000;
+        int max = 99999;
 
         int[] randomNumbers = new int[i];
 
