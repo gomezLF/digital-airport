@@ -15,9 +15,6 @@ public class Airport {
 
     public static final int ROWS_PER_PAGE = 20;
 
-    private static final int AIRLINE_DATA_SIZE = 10;
-    private static final int CITY_DATA_SIZE = 30;
-
     public static final String AIRPORT_AIRLINE_DATA = "data/AirLine.txt";
     public static final String AIRPORT_CITY_DATA = "data/City.txt";
 
@@ -43,8 +40,8 @@ public class Airport {
             ArrayList<String> city = readData(cityData);
 
             for (int j = 0; j < i; j++) {
-                int airlineN = (int) Math.floor(Math.random()*AIRLINE_DATA_SIZE);
-                int cityN = (int) Math.floor(Math.random()*CITY_DATA_SIZE);
+                int airlineN = (int) Math.floor(Math.random()*(airline.size() - 1));
+                int cityN = (int) Math.floor(Math.random()*(city.size() - 1));
                 String day = "" +  (int) Math.floor(Math.random()*(2-(30+1))+(30));
                 String month = "" + (int) Math.floor(Math.random()*(5-(12+1))+(12));
                 int hour = (int) Math.floor(Math.random()*(2-(12+1))+(12));
