@@ -18,8 +18,8 @@ public class Airport {
     private static final int AIRLINE_DATA_SIZE = 10;
     private static final int CITY_DATA_SIZE = 30;
 
-    private static final String AIRPORT_AIRLINE_DATA = "data/AirLine.txt";
-    private static final String AIRPORT_CITY_DATA = "data/City.txt";
+    public static final String AIRPORT_AIRLINE_DATA = "data/AirLine.txt";
+    public static final String AIRPORT_CITY_DATA = "data/City.txt";
 
     private List<Flight> flightList;
 
@@ -31,16 +31,16 @@ public class Airport {
         return flightList;
     }
 
-    public void createData(int i) throws IOException, NegativeArraySizeException {
+    public void createData(int i, String airlineData, String cityData) throws IOException, NegativeArraySizeException {
         if (i <= 0){
             throw new NegativeArraySizeException();
         }else {
             if (!flightList.isEmpty()){
                 flightList.clear();
             }
-            int[] flightNumbers = createRandomNumbers(i);
-            ArrayList<String> airline = readData(AIRPORT_AIRLINE_DATA);
-            ArrayList<String> city = readData(AIRPORT_CITY_DATA);
+            int[] flightNumbers = createFlightNumbers(i);
+            ArrayList<String> airline = readData(airlineData);
+            ArrayList<String> city = readData(cityData);
 
             for (int j = 0; j < i; j++) {
                 int airlineN = (int) Math.floor(Math.random()*AIRLINE_DATA_SIZE);
@@ -105,7 +105,7 @@ public class Airport {
         return words;
     }
 
-    private int[] createRandomNumbers(int i){
+    private int[] createFlightNumbers(int i){
         int min = 1000;
         int max = 50000;
 

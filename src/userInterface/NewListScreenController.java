@@ -42,7 +42,7 @@ public class NewListScreenController {
 
         try{
             size = Integer.parseInt(newListSize.getText());
-            airport.createData(size);
+            airport.createData(size, Airport.AIRPORT_AIRLINE_DATA, Airport.AIRPORT_CITY_DATA);
             airport.sortByTime();
 
             asc.addInformation();
