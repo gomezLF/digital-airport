@@ -12,6 +12,18 @@ public class Time {
         this.dayMoment = dayMoment;
     }
 
+    public int getHour() {
+        return hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public String getDayMoment() {
+        return dayMoment;
+    }
+
     @Override
     public String toString() {
         String h;

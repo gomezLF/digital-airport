@@ -125,7 +125,7 @@ class AirportTest {
     }
 
     @Test
-    public void AirportTest(){
+    void AirportTest(){
         setupScenary1();
 
         airport = new Airport();
@@ -134,7 +134,7 @@ class AirportTest {
     }
 
     @Test
-    public void createDataTest_1(){
+    void createDataTest_1(){
         //Prueba donde se verifica el correcto lanzamiento de la exceptcion NegativeArraySizeException
         setupScenary2();
 
@@ -164,7 +164,7 @@ class AirportTest {
     }
 
     @Test
-    public void createDataTest_2(){
+    void createDataTest_2(){
         setupScenary2();
 
         int size = 20;
@@ -199,7 +199,7 @@ class AirportTest {
     }
 
     @Test
-    public void sortByDateTest(){
+    void sortByDateTest(){
         //Se prueba el metodo de ordenamiento por fecha con una pequeña cantidad de datos
         setupScenary4();
 
@@ -221,7 +221,7 @@ class AirportTest {
     }
 
     @Test
-    public void sortByTimeTest(){
+    void sortByTimeTest(){
         //Se prueba el metodo de ordenamiento por hora con una pequeña cantidad de datos
         setupScenary5();
 
@@ -243,7 +243,7 @@ class AirportTest {
     }
 
     @Test
-    public void sortByAirlineTest(){
+    void sortByAirlineTest(){
         //Se prueba el metodo de ordenamiento por aerolinea con una pequeña cantidad de datos
         setupScenary6();
 
@@ -265,7 +265,7 @@ class AirportTest {
     }
 
     @Test
-    public void sortByFlightNumberTest(){
+    void sortByFlightNumberTest(){
         //Se prueba el metodo de ordenamiento por numero de vuelo, con una pequeña cantidad de datos
         setupScenary7();
 
@@ -287,7 +287,7 @@ class AirportTest {
     }
 
     @Test
-    public void sortByDestinationTest(){
+    void sortByDestinationTest(){
         //Se prueba el metodo de ordenamiento por ciudad de destino con una pequeña cantidad de datos
         setupScenary8();
 
@@ -309,7 +309,7 @@ class AirportTest {
     }
 
     @Test
-    public void sortByGateTest(){
+    void sortByGateTest(){
         //Se prueba el metodo de ordenamiento por ciudad de destino con una pequeña cantidad de datos
         setupScenary9();
 

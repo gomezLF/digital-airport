@@ -28,7 +28,7 @@ class FlightTest {
 
 
     @Test
-    public void FlightTest(){
+    void FlightTest(){
         setupScenary1();
 
         String date = "2019-04-05";
@@ -59,7 +59,7 @@ class FlightTest {
     }
 
     @Test
-    public void compareToTest(){
+    void compareToTest(){
         setupScenary2();
 
         //Se prueba que el metodo compareTo retorne el valor -1 correctamente
