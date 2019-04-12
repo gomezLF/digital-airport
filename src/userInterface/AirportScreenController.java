@@ -160,6 +160,7 @@ public class AirportScreenController {
     void sortByAirline(ActionEvent event) {
         airport.sortByAirline();
         dataTable.getItems().clear();
+        pagination = 0;
         addInformation();
     }
 

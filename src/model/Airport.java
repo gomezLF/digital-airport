@@ -287,6 +287,7 @@ public class Airport {
         if (flightNumber.equals("")){
             throw new EmptyDataException();
         }else {
+            sortByFlightNumber();
             boolean found = false;
 
             for (int i = 0; i < flightList.size() && !found; i++) {
@@ -305,6 +306,7 @@ public class Airport {
         if (city.equals("")){
             throw new EmptyDataException();
         }else {
+            sortByDestination();
             boolean found = false;
 
             for (int i = 0; i < flightList.size() && !found; i++) {
@@ -318,6 +320,8 @@ public class Airport {
     }
 
     public Flight searchByGate(int gate){
+        sortByGate();
+
         Flight searched = null;
         boolean found = false;
 

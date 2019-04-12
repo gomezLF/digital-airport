@@ -134,8 +134,6 @@ class AirportTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     @Test
@@ -163,7 +161,7 @@ class AirportTest {
             e.printStackTrace();
         }
 
-        //Prueba donde se verifica el No correcto lanzamiento de la excepcion NegativeArraySizeException
+        //Prueba donde se verifica el funcionamiento a la hora de NO lanzar la excepcion NegativeArraySizeException
         setupScenary2();
 
         size = 50;

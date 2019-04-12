@@ -1,0 +1,2 @@
+El objetivo del proyecto es para la creacion de un aeropuerto "digital", donde se podra ver informacion detallada de cada vuelo. Tambien se podra crear
+una nueva lista de vuelos cuando se desee, ordenandola segun varios criterios que seran sus atributos. Tambien se podra buscar vuelos segun criterios.
