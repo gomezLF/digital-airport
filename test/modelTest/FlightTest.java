@@ -60,9 +60,10 @@ class FlightTest {
 
     @Test
     void compareToTest(){
+        //Se prueba que el metodo compareTo retorne el valor -1 correctamente
+
         setupScenary2();
 
-        //Se prueba que el metodo compareTo retorne el valor -1 correctamente
         String date = "2019-04-05";
         time = new Time(05, 30, "PM");
         String airline = "EasyFly";
@@ -75,6 +76,9 @@ class FlightTest {
         assertTrue(flight.compareTo(flight2) == -1, "The expected value is different to -1");
 
         //Se prueba que el metodo compareTo retorne el valor 1 correctamente
+
+        setupScenary2();
+
         String date2 = "2019-04-05";
         time = new Time(05, 30, "PM");
         String airline2 = "EasyFly";
@@ -87,6 +91,9 @@ class FlightTest {
         assertTrue(flight.compareTo(flight3) == 1, "The expected value is different to 1");
 
         //Se prueba que el metodo compareTo retorne el valor 0 correctamente
+
+        setupScenary2();
+
         String date3 = "2019-04-05";
         time = new Time(05, 30, "PM");
         String airline3 = "EasyFly";

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Airport {
 
-    public static final int ROWS_PER_PAGE = 20;
+    private static final int ROWS_PER_PAGE = 20;
 
     public static final String AIRPORT_AIRLINE_DATA = "data/AirLine.txt";
     public static final String AIRPORT_CITY_DATA = "data/City.txt";
@@ -158,7 +158,7 @@ public class Airport {
             int c = i;
 
             for (int j = i + 1; j < flightList.size(); j++) {
-                if (flightList.get(j).getAirline().compareToIgnoreCase(min.getAirline()) < 0){
+                if (flightList.get(j).getAirline().compareTo(min.getAirline()) < 0){
                     min = flightList.get(j);
                     c = j;
                 }
@@ -210,15 +210,15 @@ public class Airport {
             int end = flightList.size() - 1;
 
             while(begin <= end && !found){
-                int mid = (begin+end)/2;
+                int mid = (end+begin)/2;
 
-                if (flightList.get(mid).getDate().compareTo(date) == 0){
+                if (flightList.get(mid).getDate().compareToIgnoreCase(date) == 0){
                     found = true;
                     searched = flightList.get(mid);
-                }else if (flightList.get(mid).getDate().compareTo(date) > 0){
-                    end = mid - 1;
-                }else {
+                }else if (flightList.get(mid).getDate().compareToIgnoreCase(date) < 0){
                     begin = mid + 1;
+                }else {
+                    end = mid - 1;
                 }
             }
         }
