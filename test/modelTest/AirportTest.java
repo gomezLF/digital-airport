@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AirportTest {
-
+/*
     private Airport airport;
 
     private static final String AIRPORT_AIRLINE_DATA_TEST = "dataTest/AirlineTest.txt";
@@ -594,6 +594,6 @@ class AirportTest {
         int[] array3 = airport.createPage(2);
         assertEquals(array3[0], to3, "The value in array3[0] is different to " + to3);
         assertEquals(array3[1], from3, "The value in array3[1] is different to " + from3);
-    }
+    }*/
 
 }

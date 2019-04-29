@@ -120,7 +120,7 @@ public class AirportScreenController {
 
     @FXML
     void searchClicked(ActionEvent event) {
-        if (airport.getFlightList().isEmpty()){
+        if (airport.getFlightList() == null){
             Alert alert = new Alert(Alert.AlertType.WARNING, "There is no list created to search for an item.", ButtonType.OK);
             alert.setHeaderText("Please, create a new List to search an item");
             alert.show();
@@ -298,15 +298,14 @@ public class AirportScreenController {
         }else {
             previousButton.setDisable(false);
         }
-        if (array[1] == airport.getFlightList().size()){
+        if (array[1] == airport.listSize()){
             nextButton.setDisable(true);
         }else {
             nextButton.setDisable(false);
         }
 
         dataTable.getItems().clear();
-        Collection<Flight> data = FXCollections.observableList(airport.getFlightList().subList(array[0], array[1]));
-        dataTable.getItems().addAll(data);
+        dataTable.getItems().addAll(airport.dataToScreen(pagination));
     }
 
     public void updateTime(){
