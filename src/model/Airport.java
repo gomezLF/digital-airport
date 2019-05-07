@@ -151,7 +151,7 @@ public class Airport {
             Flight next = first.getNext();
 
             while(next != null){
-                if (current.getDate().compareTo(next.getDate()) > 0){
+                if (current.compareTo(next) == 1){
 
                     if (previous != null){
                         Flight sig = next.getNext();
@@ -181,22 +181,9 @@ public class Airport {
     }
 
     public void sortByTime(){
-        int counter = 0;
-        Flight previous = null;
-        Flight next = first.getNext();
 
-        for (Flight i = first; i.getNext() != null; i = i.getNext()){
-            Flight current = i;
-            int j = counter;
-            counter ++;
-
-            while(j > 0 && previous.getTime().compareTo(current.getTime()) > 0){
-                
-
-                j--;
-            }
-
-
+        for (Flight i = first; i != null; i = i.getNext()){
+            Flight current 
 
 
         }

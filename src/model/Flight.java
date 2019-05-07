@@ -56,9 +56,9 @@ public class Flight implements Comparable<Flight>{
     public int compareTo(Flight o) {
         int comparation;
 
-        if (flightNumber.compareToIgnoreCase(o.flightNumber) > 0){
+        if (date.compareToIgnoreCase(o.date) > 0){
             comparation = 1;
-        }else if (flightNumber.compareToIgnoreCase(o.flightNumber) < 0){
+        }else if (date.compareToIgnoreCase(o.date) < 0){
             comparation = -1;
         }else{
             comparation = 0;
