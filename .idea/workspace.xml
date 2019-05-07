@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Linked Digital Airport Java project, version 4.1. Implemented the doubly linked list, displays the data correctly on screen using the doubly linked list" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Linked Digital Airport Java project, version 4.1. Implemented the doubly linked list, displays the data correctly on screen using the doubly linked list">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/digital-airport/model/Airport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/digital-airport/model/Airport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/digital-airport/model/Flight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/digital-airport/model/Flight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/digital-airport/userInterface/AirportScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/digital-airport/userInterface/AirportScreenController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Airport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Flight.java" afterDir="false" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -75,17 +82,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/userInterface/AirportScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2907">
-              <caret line="292" column="33" selection-start-line="292" selection-start-column="33" selection-end-line="292" selection-end-column="33" />
+            <state relative-caret-position="861">
+              <caret line="294" selection-start-line="294" selection-end-line="294" />
               <folding>
                 <element signature="e#2690#2691#0" expanded="true" />
                 <element signature="e#2720#2721#0" expanded="true" />
-                <element signature="method#sortByAirline#0;class#AirportScreenController#0" />
-                <element signature="method#sortByCity#0;class#AirportScreenController#0" />
-                <element signature="method#sortByFlight#0;class#AirportScreenController#0" />
-                <element signature="method#sortByGate#0;class#AirportScreenController#0" />
-                <element signature="method#sortByDate#0;class#AirportScreenController#0" />
-                <element signature="method#sortByTime#0;class#AirportScreenController#0" />
                 <element signature="method#searchAirline#0;class#AirportScreenController#0" />
                 <element signature="method#searchDate#0;class#AirportScreenController#0" />
                 <element signature="method#searchCity#0;class#AirportScreenController#0" />
@@ -97,25 +98,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/modelTest/AirportTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/Airport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="268" lean-forward="true" selection-start-line="268" selection-end-line="268" />
+            <state relative-caret-position="238">
+              <caret line="193" column="16" selection-start-line="193" selection-start-column="16" selection-end-line="193" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#588#589#0" expanded="true" />
+                <element signature="e#616#617#0" expanded="true" />
+                <element signature="method#createData#0;class#Airport#0" />
+                <element signature="method#createFlight#0;class#Airport#0" />
+                <element signature="method#addFlight#0;class#Airport#0" />
+                <element signature="method#readData#0;class#Airport#0" />
+                <element signature="method#createFlightNumbers#0;class#Airport#0" />
               </folding>
             </state>
           </provider>
@@ -124,11 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Flight.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-              <folding>
-                <element signature="method#compareTo#0;class#Flight#0" />
-              </folding>
+            <state relative-caret-position="-332">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -179,10 +172,10 @@
         <option value="$PROJECT_DIR$/test/modelTest/TimeTest.java" />
         <option value="$PROJECT_DIR$/test/modelTest/FlightTest.java" />
         <option value="$PROJECT_DIR$/dataTest/AirlineTest.txt" />
-        <option value="$PROJECT_DIR$/src/model/Flight.java" />
         <option value="$PROJECT_DIR$/test/modelTest/AirportTest.java" />
-        <option value="$PROJECT_DIR$/src/model/Airport.java" />
         <option value="$PROJECT_DIR$/src/userInterface/AirportScreenController.java" />
+        <option value="$PROJECT_DIR$/src/model/Flight.java" />
+        <option value="$PROJECT_DIR$/src/model/Airport.java" />
       </list>
     </option>
   </component>
@@ -202,7 +195,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,6 +223,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -474,7 +467,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19106881" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.13030747" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -483,7 +476,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26456693" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36692914" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -534,12 +527,12 @@
     <entry file="file://$PROJECT_DIR$/src/userInterface/Controller.java" />
     <entry file="file://$PROJECT_DIR$/data/AirportScreenData.txt" />
     <entry file="file://$PROJECT_DIR$/src/userInterface/NewListScreen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="258" selection-start-line="9" selection-start-column="258" selection-end-line="9" selection-end-column="258" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/data/Time.txt" />
     <entry file="file://$PROJECT_DIR$/src/customExceptions/NegativeNumberException.java" />
@@ -570,12 +563,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/userInterface/AirportScreen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-898">
           <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/userInterface/AirportScreen2.fxml" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/javafx-src.zip!/javafx/collections/ModifiableObservableListBase.java">
@@ -678,6 +671,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/modelTest/AirportTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/userInterface/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -690,17 +693,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/userInterface/AirportScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="292" column="33" selection-start-line="292" selection-start-column="33" selection-end-line="292" selection-end-column="33" />
+        <state relative-caret-position="861">
+          <caret line="294" selection-start-line="294" selection-end-line="294" />
           <folding>
             <element signature="e#2690#2691#0" expanded="true" />
             <element signature="e#2720#2721#0" expanded="true" />
-            <element signature="method#sortByAirline#0;class#AirportScreenController#0" />
-            <element signature="method#sortByCity#0;class#AirportScreenController#0" />
-            <element signature="method#sortByFlight#0;class#AirportScreenController#0" />
-            <element signature="method#sortByGate#0;class#AirportScreenController#0" />
-            <element signature="method#sortByDate#0;class#AirportScreenController#0" />
-            <element signature="method#sortByTime#0;class#AirportScreenController#0" />
             <element signature="method#searchAirline#0;class#AirportScreenController#0" />
             <element signature="method#searchDate#0;class#AirportScreenController#0" />
             <element signature="method#searchCity#0;class#AirportScreenController#0" />
@@ -711,32 +708,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/modelTest/AirportTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Flight.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="method#compareTo#0;class#Flight#0" />
-          </folding>
+        <state relative-caret-position="-332">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Airport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="268" lean-forward="true" selection-start-line="268" selection-end-line="268" />
+        <state relative-caret-position="238">
+          <caret line="193" column="16" selection-start-line="193" selection-start-column="16" selection-end-line="193" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#616#617#0" expanded="true" />
+            <element signature="method#createData#0;class#Airport#0" />
+            <element signature="method#createFlight#0;class#Airport#0" />
+            <element signature="method#addFlight#0;class#Airport#0" />
+            <element signature="method#readData#0;class#Airport#0" />
+            <element signature="method#createFlightNumbers#0;class#Airport#0" />
           </folding>
         </state>
       </provider>

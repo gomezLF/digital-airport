@@ -34,7 +34,6 @@ public class Airport {
         }else {
             if (first != null){
                 first.setNext(null);
-                first.setPrevious(null);
                 first = null;
             }
             int[] flightNumbers = createFlightNumbers(i);
@@ -97,7 +96,7 @@ public class Airport {
                 aux = aux.getNext();
             }
             aux.setNext(flight);
-            aux.getNext().setPrevious(aux);
+
         }
     }
 
@@ -143,32 +142,65 @@ public class Airport {
     }
 
 
-    public void sortByDate(){
-/*        for (Flight i = first; i.getNext() != null; i = i.getNext()){
-            for (Flight j = first; j.getNext() != null; j = j.getNext()){
-                if (j.getDate().compareTo(j.getNext().getDate()) > 0){
-                    Flight temp = j;
-                    j.getPrevious().setNext(temp.getNext());
-                    j.getPrevious().getNext().setNext(temp);
-                    temp.setNext(temp.getNext().getNext());
+    public void sortByDate() {
+
+        for (int i = 0; i < listSize(); i++){
+
+            Flight current = first;
+            Flight previous = null;
+            Flight next = first.getNext();
+
+            while(next != null){
+                if (current.getDate().compareTo(next.getDate()) > 0){
+
+                    if (previous != null){
+                        Flight sig = next.getNext();
+
+                        previous.setNext(next);
+                        next.setNext(current);
+                        current.setNext(sig);
+
+                    }else {
+                        Flight sig = next.getNext();
+
+                        first = next;
+                        next.setNext(current);
+                        current.setNext(sig);
+                    }
+
+                    previous = next;
+                    next = current.getNext();
+
+                }else {
+                    previous = current;
+                    current = next;
+                    next = next.getNext();
                 }
             }
-        }*/
-
-
-/*        for(int i =0; i< flightList.size(); i++) {
-            for (int j = 0; j < flightList.size() - i - 1; j++) {
-                if (flightList.get(j).getDate().compareTo(flightList.get(j + 1).getDate()) > 0) {
-                    Flight temp = flightList.get(j);
-                    flightList.set(j, flightList.get(j + 1));
-                    flightList.set(j + 1, temp);
-                }
-            }
-        }*/
+        }
     }
 
-
     public void sortByTime(){
+        int counter = 0;
+        Flight previous = null;
+        Flight next = first.getNext();
+
+        for (Flight i = first; i.getNext() != null; i = i.getNext()){
+            Flight current = i;
+            int j = counter;
+            counter ++;
+
+            while(j > 0 && previous.getTime().compareTo(current.getTime()) > 0){
+                
+
+                j--;
+            }
+
+
+
+
+        }
+
 /*        for (int i = 0; i < flightList.size(); i++) {
             Flight current = flightList.get(i);
             int j = i;
@@ -182,6 +214,20 @@ public class Airport {
 
 
     public void sortByAirline(){
+/*        for (Flight i = first; i.getNext() != null; i = i.getNext()){
+            Flight min = i;
+            Flight c = i;
+
+            for (Flight j = i.getNext(); j.getNext() != null; j = j.getNext()){
+                if (j.getAirline().compareTo(min.getAirline()) < 0){
+                    min = j;
+                    c = j;
+                }
+            }
+
+        }*/
+
+
 /*        for (int i = 0; i < flightList.size() - 1; i++) {
             Flight min = flightList.get(i);
             int c = i;
@@ -200,30 +246,17 @@ public class Airport {
 
 
     public void sortByFlightNumber(){
-        /*Collections.sort(flightList);*/
+
     }
 
 
     public void sortByDestination(){
-       /* Collections.sort(flightList, new CityDestinationComparator());*/
+
     }
 
 
     public void sortByGate(){
-/*        for (int i = 0; i < flightList.size() - 1; i++) {
-            Flight min = flightList.get(i);
-            int c = i;
 
-            for (int j = i + 1; j < flightList.size(); j++) {
-                if (flightList.get(j).getGate() < min.getGate()){
-                    min = flightList.get(j);
-                    c = j;
-                }
-            }
-            Flight aux = flightList.get(i);
-            flightList.set(i, min);
-            flightList.set(c, aux);
-        }*/
     }
     
     public Flight searchByDate(String date) throws EmptyDataException {
@@ -233,13 +266,17 @@ public class Airport {
             throw new EmptyDataException();
         }else {
             sortByDate();
+
+            Flight current = first;
             boolean found = false;
 
-            for (Flight i = first; i.getNext() != null && !found; i = i.getNext()) {
-                if (i.getDate().compareTo(date) == 0){
+            while(current != null && !found){
+
+                if (current.getDate().compareTo(date) == 0){
                     found = true;
-                    searched = i;
+                    searched = current;
                 }
+                current = current.getNext();
             }
         }
         return searched;
@@ -252,13 +289,17 @@ public class Airport {
             throw new EmptyDataException();
         }else {
             sortByTime();
+
+            Flight current = first;
             boolean found = false;
 
-            for (Flight i = first; i.getNext() != null && !found; i = i.getNext()) {
-                if (i.getTime().compareTo(time) == 0){
+            while(current != null && !found){
+                if (current.getTime().compareTo(time) == 0){
                     found = true;
-                    searched = i;
+                    searched = current;
                 }
+
+                current = current.getNext();
             }
         }
         return searched;
@@ -271,13 +312,17 @@ public class Airport {
             throw new EmptyDataException();
         }else {
             sortByAirline();
+
+            Flight current = first;
             boolean found = false;
 
-            for (Flight i = first; i.getNext() != null && !found; i = i.getNext()) {
-                if (i.getAirline().compareTo(airline) == 0){
+            while(current != null && !found){
+                if (current.getAirline().compareTo(airline) == 0){
                     found = true;
-                    searched = i;
+                    searched = current;
                 }
+
+                current = current.getNext();
             }
         }
         return searched;
@@ -292,7 +337,7 @@ public class Airport {
             sortByFlightNumber();
             boolean found = false;
 
-            for (Flight i = first; i.getNext() != null && !found; i = i.getNext()) {
+            for (Flight i = first; i != null && !found; i = i.getNext()) {
                 if (i.getFlightNumber().compareTo(flightNumber) == 0){
                     found = true;
                     searched = i;
@@ -311,7 +356,7 @@ public class Airport {
             sortByDestination();
             boolean found = false;
 
-            for (Flight i = first; i.getNext() != null && !found; i = i.getNext()) {
+            for (Flight i = first; i != null && !found; i = i.getNext()) {
                 if (i.getDestinationCity().compareTo(city) == 0){
                     found = true;
                     searched = i;
@@ -327,7 +372,7 @@ public class Airport {
         Flight searched = null;
         boolean found = false;
 
-        for (Flight i = first; i.getNext() != null && !found; i = i.getNext()){
+        for (Flight i = first; i != null && !found; i = i.getNext()){
             if (i.getGate() == gate){
                 found = true;
                 searched = i;
@@ -352,9 +397,9 @@ public class Airport {
         int fromIndex = pageIndex * ROWS_PER_PAGE;
         int toIndex = Math.min(fromIndex + ROWS_PER_PAGE, listSize());
 
-        int[] array = new int[] {fromIndex, toIndex};
+        int[] page = new int[] {fromIndex, toIndex};
 
-        return array;
+        return page;
     }
 
     public ObservableList<Flight> dataToScreen(int pageIndex){

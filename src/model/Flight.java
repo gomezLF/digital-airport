@@ -3,7 +3,6 @@ package model;
 public class Flight implements Comparable<Flight>{
 
     private Flight next;
-    private Flight previous;
 
     private String date;
     private Time time;
@@ -27,14 +26,6 @@ public class Flight implements Comparable<Flight>{
 
     public void setNext(Flight next) {
         this.next = next;
-    }
-
-    public Flight getPrevious() {
-        return previous;
-    }
-
-    public void setPrevious(Flight previous) {
-        this.previous = previous;
     }
 
     public String getDate() {
