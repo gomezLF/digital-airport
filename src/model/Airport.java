@@ -288,15 +288,126 @@ public class Airport {
 
     public void sortByDestination(){
         if (first.getNext() != null){
-            
+            Flight n1 = null;
+            Flight n2 = null;
+
+            if (first == null || first.getNext()== null)
+            {
+                return;
+            }
+            for (n1 = first; n1.getNext() != null; n1 = n1.getNext()){
+                for (n2 = n1.getNext(); n2 != null; n2 = n2.getNext()) {
+                    Flight bn2 = before(n2);
+                    Flight bn1 = before(n1);
+                    if (n1.getDestinationCity().compareTo(n2.getDestinationCity()) > 0){
+                        if (n1 == first){
+                            if (n1.getNext() == n2){
+                                n1.setNext(n2.getNext());;
+                                n2.setNext(n1);
+                                first = n2;
+                            }
+                            else{
+                                Flight temp = n2.getNext();
+                                n2.setNext(n1.getNext());
+                                n1.setNext(temp);
+                                bn2.setNext(n1);
+                                first = n2;
+                            }
+                        }else{
+                            if (n1.getNext() == n2)
+                            {
+                                bn1.setNext(n2);
+                                Flight temp = n2.getNext();
+                                n2.setNext(n1);
+                                n1.setNext(temp);
+                            }
+                            else
+                            {
+                                bn1.setNext(n2);
+                                Flight temp = n2.getNext();
+                                n2.setNext(n1.getNext());
+                                n1.setNext(temp);
+                                bn2.setNext(n1);
+                            }
+                        }
+
+                        Flight temp = n1;
+                        n1 = n2;
+                        n2 = temp;
+
+                    }
+                }
+            }
+
         }
     }
 
 
     public void sortByGate(){
         if (first.getNext() != null){
+            Flight n1 = null;
+            Flight n2 = null;
 
+            if (first == null || first.getNext()== null)
+            {
+                return;
+            }
+            for (n1 = first; n1.getNext() != null; n1 = n1.getNext()){
+                for (n2 = n1.getNext(); n2 != null; n2 = n2.getNext()) {
+                    Flight bn2 = before(n2);
+                    Flight bn1 = before(n1);
+                    if (n1.getGate() > n2.getGate()){
+                        if (n1 == first){
+                            if (n1.getNext() == n2){
+                                n1.setNext(n2.getNext());;
+                                n2.setNext(n1);
+                                first = n2;
+                            }
+                            else{
+                                Flight temp = n2.getNext();
+                                n2.setNext(n1.getNext());
+                                n1.setNext(temp);
+                                bn2.setNext(n1);
+                                first = n2;
+                            }
+                        }else{
+                            if (n1.getNext() == n2)
+                            {
+                                bn1.setNext(n2);
+                                Flight temp = n2.getNext();
+                                n2.setNext(n1);
+                                n1.setNext(temp);
+                            }
+                            else
+                            {
+                                bn1.setNext(n2);
+                                Flight temp = n2.getNext();
+                                n2.setNext(n1.getNext());
+                                n1.setNext(temp);
+                                bn2.setNext(n1);
+                            }
+                        }
+
+                        Flight temp = n1;
+                        n1 = n2;
+                        n2 = temp;
+
+                    }
+                }
+            }
         }
+    }
+
+    private Flight before( Flight s)
+    {
+        Flight prev = null;
+        Flight current = first;
+        while( current != null && current != s )
+        {
+            prev = current;
+            current = current.getNext();
+        }
+        return current != null ? prev : null;
     }
     
     public Flight searchByDate(String date) throws EmptyDataException {
