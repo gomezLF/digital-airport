@@ -143,107 +143,160 @@ public class Airport {
 
 
     public void sortByDate() {
+        if (first.getNext() != null){
 
-        for (int i = 0; i < listSize(); i++){
+            for (int i = 0; i < listSize(); i++){
+                Flight current = first;
+                Flight previous = null;
+                Flight next = first.getNext();
 
-            Flight current = first;
-            Flight previous = null;
-            Flight next = first.getNext();
+                while(next != null){
+                    if (current.compareTo(next) == 1){
+                        if (previous != null){
+                            Flight sig = next.getNext();
 
-            while(next != null){
-                if (current.compareTo(next) == 1){
+                            previous.setNext(next);
+                            next.setNext(current);
+                            current.setNext(sig);
+                        }else {
+                            Flight sig = next.getNext();
 
-                    if (previous != null){
-                        Flight sig = next.getNext();
+                            first = next;
+                            next.setNext(current);
+                            current.setNext(sig);
+                        }
 
-                        previous.setNext(next);
-                        next.setNext(current);
-                        current.setNext(sig);
+                        previous = next;
+                        next = current.getNext();
 
                     }else {
-                        Flight sig = next.getNext();
-
-                        first = next;
-                        next.setNext(current);
-                        current.setNext(sig);
+                        previous = current;
+                        current = next;
+                        next = next.getNext();
                     }
-
-                    previous = next;
-                    next = current.getNext();
-
-                }else {
-                    previous = current;
-                    current = next;
-                    next = next.getNext();
                 }
             }
         }
     }
 
     public void sortByTime(){
+        if (first.getNext() != null){
 
-        for (Flight i = first; i != null; i = i.getNext()){
-            Flight current 
+            for (int i = 0; i < listSize(); i++){
+                Flight current = first;
+                Flight previous = null;
+                Flight next = first.getNext();
 
+                while(next != null){
+                    if (current.getTime().compareTo(next.getTime()) > 0){
 
-        }
+                        if (previous != null){
+                            Flight sig = next.getNext();
 
-/*        for (int i = 0; i < flightList.size(); i++) {
-            Flight current = flightList.get(i);
-            int j = i;
-            while(j > 0 && flightList.get(j-1).getTime().compareTo(current.getTime()) > 0){
-                flightList.set(j, flightList.get(j-1));
-                j--;
+                            previous.setNext(next);
+                            next.setNext(current);
+                            current.setNext(sig);
+                        }else {
+                            Flight sig = next.getNext();
+
+                            first = next;
+                            next.setNext(current);
+                            current.setNext(sig);
+                        }
+
+                        previous = next;
+                        next = current.getNext();
+
+                    }else {
+                        previous = current;
+                        current = next;
+                        next = next.getNext();
+                    }
+                }
             }
-            flightList.set(j, current);
-        }*/
+        }
     }
 
 
     public void sortByAirline(){
-/*        for (Flight i = first; i.getNext() != null; i = i.getNext()){
-            Flight min = i;
-            Flight c = i;
+        if (first.getNext() != null){
 
-            for (Flight j = i.getNext(); j.getNext() != null; j = j.getNext()){
-                if (j.getAirline().compareTo(min.getAirline()) < 0){
-                    min = j;
-                    c = j;
+            Flight p = first;
+            Flight current = first.getNext();
+            Flight previous = first;
+
+            while(current != null){
+                if (previous.getAirline().compareTo(current.getAirline()) <= 0){
+                    current = current.getNext();
+                    previous = previous.getNext();
+                }else {
+
+                    if (first.getAirline().compareTo(current.getAirline()) > 0){
+                        previous.setNext(current.getNext());
+                        current.setNext(first);
+                        first = current;
+                    }else {
+                        p = first;
+                        while(p.getNext() != null && p.getNext().getAirline().compareTo(current.getAirline()) < 0){
+                            p = p.getNext();
+                        }
+                        previous.setNext(current.getNext());
+                        current.setNext(p.getNext());
+                        p.setNext(current);
+                    }
                 }
+                current = previous.getNext();
             }
-
-        }*/
-
-
-/*        for (int i = 0; i < flightList.size() - 1; i++) {
-            Flight min = flightList.get(i);
-            int c = i;
-
-            for (int j = i + 1; j < flightList.size(); j++) {
-                if (flightList.get(j).getAirline().compareTo(min.getAirline()) < 0){
-                    min = flightList.get(j);
-                    c = j;
-                }
-            }
-            Flight aux = flightList.get(i);
-            flightList.set(i, min);
-            flightList.set(c, aux);
-        }*/
+        }
     }
 
 
     public void sortByFlightNumber(){
+        if (first.getNext() != null){
 
+            Flight p = first;
+            Flight current = first.getNext();
+            Flight previous = first;
+
+            while(current != null){
+                if (previous.getFlightNumber().compareTo(current.getFlightNumber()) <= 0){
+                    current = current.getNext();
+                    previous = previous.getNext();
+                }else {
+
+                    if (first.getFlightNumber().compareTo(current.getFlightNumber()) > 0){
+                        previous.setNext(current.getNext());
+                        current.setNext(first);
+                        first = current;
+                    }else {
+                        p = first;
+
+                        FlightNumberComparator fnc = new FlightNumberComparator();
+                        while(p.getNext() != null && fnc.compare(p.getNext(), current) == -1){
+                            p = p.getNext();
+                        }
+                        previous.setNext(current.getNext());
+                        current.setNext(p.getNext());
+                        p.setNext(current);
+                    }
+                }
+                current = previous.getNext();
+            }
+        }
     }
 
 
     public void sortByDestination(){
-
+        if (first.getNext() != null){
+            
+        }
     }
 
 
     public void sortByGate(){
+        if (first.getNext() != null){
 
+        }
     }
     
     public Flight searchByDate(String date) throws EmptyDataException {
@@ -376,7 +429,6 @@ public class Airport {
             size ++;
             aux = aux.getNext();
         }
-
         return size;
     }
 
